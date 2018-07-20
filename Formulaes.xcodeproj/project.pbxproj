@@ -7,15 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		362854009628944153A457A8 /* Pods_Formulaes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD08A0B3645FC0DD72C6A60 /* Pods_Formulaes.framework */; };
+		7D026DFB20E3FF7600A7D16A /* mathKeyboard1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D026DF820E3FF6900A7D16A /* mathKeyboard1.xib */; };
+		7D026DFC20E401BB00A7D16A /* mathKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D4E15C920DB3EE8002D311D /* mathKeyboard.xib */; };
+		7D070F631F1D3FDF00EC4AED /* equationparserwithtwoindexthings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D070F621F1D3FDF00EC4AED /* equationparserwithtwoindexthings.swift */; };
+		7D1BEE681F4F7F1900766B01 /* CalcTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1BEE671F4F7F1900766B01 /* CalcTableViewCell.swift */; };
+		7D1BEE6A1F4F822000766B01 /* thing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1BEE691F4F822000766B01 /* thing.swift */; };
 		7D254BC31EF5DF6A004DFD1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D254BC21EF5DF6A004DFD1C /* AppDelegate.swift */; };
 		7D254BC51EF5DF6A004DFD1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D254BC41EF5DF6A004DFD1C /* ViewController.swift */; };
 		7D254BC81EF5DF6A004DFD1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D254BC61EF5DF6A004DFD1C /* Main.storyboard */; };
 		7D254BCA1EF5DF6A004DFD1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D254BC91EF5DF6A004DFD1C /* Assets.xcassets */; };
 		7D254BCD1EF5DF6A004DFD1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D254BCB1EF5DF6A004DFD1C /* LaunchScreen.storyboard */; };
+		7D3615531F5E44460094692F /* FormulaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3615521F5E44460094692F /* FormulaTableViewCell.swift */; };
+		7D4BFDA320E2FBE700ED57E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D254BC91EF5DF6A004DFD1C /* Assets.xcassets */; };
+		7D4BFDA520E3146700ED57E7 /* testView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D4BFDA420E3146700ED57E7 /* testView.xib */; };
+		7D4C545720901685003AF802 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C545620901685003AF802 /* Preview.swift */; };
+		7D4C5459209016F3003AF802 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C5458209016F3003AF802 /* CameraViewController.swift */; };
+		7D6F64A81F77320100A925D9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6F64A71F77320100A925D9 /* CoreData.framework */; };
+		7D6F64AB1F77322F00A925D9 /* Formulaes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F64A91F77322F00A925D9 /* Formulaes.xcdatamodeld */; };
+		7D7AD06D1F361FCB00F7DC27 /* postfix calc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7AD06C1F361FCB00F7DC27 /* postfix calc.swift */; };
+		7D7C0D991F8FE82E00B9DB9D /* constanttables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C0D981F8FE82E00B9DB9D /* constanttables.swift */; };
+		7D97782F1F2835EE00143B8B /* shunting yard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D97782E1F2835EE00143B8B /* shunting yard.swift */; };
+		7D9E66A01F2C2E3F0090DCFE /* sources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E669F1F2C2E3F0090DCFE /* sources.swift */; };
+		7D9E66A21F2C2E880090DCFE /* stuff1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E66A11F2C2E880090DCFE /* stuff1.swift */; };
+		7DC4214020E2CD3300AD3CAE /* mathKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4E15BF20DB2A4B002D311D /* mathKeyboardViewController.swift */; };
+		7DC4215820E2D17700AD3CAE /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC4215720E2D17700AD3CAE /* KeyboardViewController.swift */; };
+		7DC4215C20E2D17700AD3CAE /* formulaKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7DC4215520E2D17700AD3CAE /* formulaKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7DD433131F11C7650029E94C /* FormulasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD433121F11C7650029E94C /* FormulasViewController.swift */; };
 		7DEEE84B1F09DDF100A1411B /* Formula array saver thing idk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEEE84A1F09DDF100A1411B /* Formula array saver thing idk.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7DC4215A20E2D17700AD3CAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D254BB71EF5DF6A004DFD1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7DC4215420E2D17700AD3CAE;
+			remoteInfo = formulaKeyboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7D4E15C820DB2A4B002D311D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7DC4215C20E2D17700AD3CAE /* formulaKeyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4D499088292CDB0D26268C85 /* Pods-Formulaes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Formulaes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes.release.xcconfig"; sourceTree = "<group>"; };
+		7D026DF820E3FF6900A7D16A /* mathKeyboard1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mathKeyboard1.xib; sourceTree = "<group>"; };
+		7D070F621F1D3FDF00EC4AED /* equationparserwithtwoindexthings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = equationparserwithtwoindexthings.swift; sourceTree = "<group>"; };
+		7D1BEE671F4F7F1900766B01 /* CalcTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcTableViewCell.swift; sourceTree = "<group>"; };
+		7D1BEE691F4F822000766B01 /* thing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = thing.swift; sourceTree = "<group>"; };
 		7D254BBF1EF5DF6A004DFD1C /* Formulaes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Formulaes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D254BC21EF5DF6A004DFD1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D254BC41EF5DF6A004DFD1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,11 +74,40 @@
 		7D254BC91EF5DF6A004DFD1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D254BCC1EF5DF6A004DFD1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D254BCE1EF5DF6A004DFD1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D3615521F5E44460094692F /* FormulaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormulaTableViewCell.swift; sourceTree = "<group>"; };
+		7D4BFDA420E3146700ED57E7 /* testView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testView.xib; sourceTree = "<group>"; };
+		7D4C545620901685003AF802 /* Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		7D4C5458209016F3003AF802 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		7D4E15BF20DB2A4B002D311D /* mathKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mathKeyboardViewController.swift; sourceTree = "<group>"; };
+		7D4E15C920DB3EE8002D311D /* mathKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = mathKeyboard.xib; sourceTree = "<group>"; };
+		7D6A9E4F20E3FE8100010F2C /* formulaKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formulaKeyboard.swift; sourceTree = "<group>"; };
+		7D6F64A71F77320100A925D9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7D6F64AA1F77322F00A925D9 /* Formulaes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Formulaes.xcdatamodel; sourceTree = "<group>"; };
+		7D7AD06C1F361FCB00F7DC27 /* postfix calc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "postfix calc.swift"; sourceTree = "<group>"; };
+		7D7C0D981F8FE82E00B9DB9D /* constanttables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constanttables.swift; sourceTree = "<group>"; };
+		7D97782E1F2835EE00143B8B /* shunting yard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "shunting yard.swift"; sourceTree = "<group>"; };
+		7D9E669F1F2C2E3F0090DCFE /* sources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sources.swift; sourceTree = "<group>"; };
+		7D9E66A11F2C2E880090DCFE /* stuff1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stuff1.swift; sourceTree = "<group>"; };
+		7DC4215520E2D17700AD3CAE /* formulaKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = formulaKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DC4215720E2D17700AD3CAE /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		7DC4215920E2D17700AD3CAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DD433121F11C7650029E94C /* FormulasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormulasViewController.swift; sourceTree = "<group>"; };
 		7DEEE84A1F09DDF100A1411B /* Formula array saver thing idk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Formula array saver thing idk.swift"; sourceTree = "<group>"; };
+		AAD08A0B3645FC0DD72C6A60 /* Pods_Formulaes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Formulaes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0391ACF8E120686273430DF /* Pods-Formulaes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Formulaes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7D254BBC1EF5DF6A004DFD1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D6F64A81F77320100A925D9 /* CoreData.framework in Frameworks */,
+				362854009628944153A457A8 /* Pods_Formulaes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DC4215220E2D17700AD3CAE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,11 +117,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04ACFD146CA67BF7F5921FB4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E0391ACF8E120686273430DF /* Pods-Formulaes.debug.xcconfig */,
+				4D499088292CDB0D26268C85 /* Pods-Formulaes.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7D254BB61EF5DF6A004DFD1C = {
 			isa = PBXGroup;
 			children = (
+				7D4E15C920DB3EE8002D311D /* mathKeyboard.xib */,
+				7D026DF820E3FF6900A7D16A /* mathKeyboard1.xib */,
+				7D6A9E4F20E3FE8100010F2C /* formulaKeyboard.swift */,
+				7D4C545620901685003AF802 /* Preview.swift */,
+				7D4C5458209016F3003AF802 /* CameraViewController.swift */,
+				7D6F64A91F77322F00A925D9 /* Formulaes.xcdatamodeld */,
+				7D1BEE671F4F7F1900766B01 /* CalcTableViewCell.swift */,
+				7D4E15BF20DB2A4B002D311D /* mathKeyboardViewController.swift */,
 				7D254BC11EF5DF6A004DFD1C /* Formulaes */,
+				7DC4215620E2D17700AD3CAE /* formulaKeyboard */,
 				7D254BC01EF5DF6A004DFD1C /* Products */,
+				7D6F64A61F77320000A925D9 /* Frameworks */,
+				04ACFD146CA67BF7F5921FB4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				7D254BBF1EF5DF6A004DFD1C /* Formulaes.app */,
+				7DC4215520E2D17700AD3CAE /* formulaKeyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,13 +159,41 @@
 			children = (
 				7D254BC21EF5DF6A004DFD1C /* AppDelegate.swift */,
 				7DEEE84A1F09DDF100A1411B /* Formula array saver thing idk.swift */,
+				7D070F621F1D3FDF00EC4AED /* equationparserwithtwoindexthings.swift */,
 				7D254BC41EF5DF6A004DFD1C /* ViewController.swift */,
+				7D7C0D981F8FE82E00B9DB9D /* constanttables.swift */,
+				7D7AD06C1F361FCB00F7DC27 /* postfix calc.swift */,
+				7DD433121F11C7650029E94C /* FormulasViewController.swift */,
+				7D3615521F5E44460094692F /* FormulaTableViewCell.swift */,
+				7D1BEE691F4F822000766B01 /* thing.swift */,
 				7D254BC61EF5DF6A004DFD1C /* Main.storyboard */,
 				7D254BC91EF5DF6A004DFD1C /* Assets.xcassets */,
 				7D254BCB1EF5DF6A004DFD1C /* LaunchScreen.storyboard */,
 				7D254BCE1EF5DF6A004DFD1C /* Info.plist */,
+				7D97782E1F2835EE00143B8B /* shunting yard.swift */,
+				7D9E669F1F2C2E3F0090DCFE /* sources.swift */,
+				7D9E66A11F2C2E880090DCFE /* stuff1.swift */,
 			);
 			path = Formulaes;
+			sourceTree = "<group>";
+		};
+		7D6F64A61F77320000A925D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D6F64A71F77320100A925D9 /* CoreData.framework */,
+				AAD08A0B3645FC0DD72C6A60 /* Pods_Formulaes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DC4215620E2D17700AD3CAE /* formulaKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				7DC4215720E2D17700AD3CAE /* KeyboardViewController.swift */,
+				7D4BFDA420E3146700ED57E7 /* testView.xib */,
+				7DC4215920E2D17700AD3CAE /* Info.plist */,
+			);
+			path = formulaKeyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,18 +203,40 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D254BD11EF5DF6A004DFD1C /* Build configuration list for PBXNativeTarget "Formulaes" */;
 			buildPhases = (
+				E03B599D13C39C91BCD03DFA /* [CP] Check Pods Manifest.lock */,
 				7D254BBB1EF5DF6A004DFD1C /* Sources */,
 				7D254BBC1EF5DF6A004DFD1C /* Frameworks */,
 				7D254BBD1EF5DF6A004DFD1C /* Resources */,
+				7D4E15C820DB2A4B002D311D /* Embed App Extensions */,
+				828EB53579EF718E39363372 /* [CP] Embed Pods Frameworks */,
+				9216924475E7381958E8DB21 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7DC4215B20E2D17700AD3CAE /* PBXTargetDependency */,
 			);
 			name = Formulaes;
 			productName = Formulaes;
 			productReference = 7D254BBF1EF5DF6A004DFD1C /* Formulaes.app */;
 			productType = "com.apple.product-type.application";
+		};
+		7DC4215420E2D17700AD3CAE /* formulaKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DC4215D20E2D17700AD3CAE /* Build configuration list for PBXNativeTarget "formulaKeyboard" */;
+			buildPhases = (
+				7DC4215120E2D17700AD3CAE /* Sources */,
+				7DC4215220E2D17700AD3CAE /* Frameworks */,
+				7DC4215320E2D17700AD3CAE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = formulaKeyboard;
+			productName = formulaKeyboard;
+			productReference = 7DC4215520E2D17700AD3CAE /* formulaKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -93,13 +244,19 @@
 		7D254BB71EF5DF6A004DFD1C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Michael Miyajima";
 				TargetAttributes = {
 					7D254BBE1EF5DF6A004DFD1C = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = ETM64S4G26;
+						DevelopmentTeam = 3YCGAR2P8M;
+						LastSwiftMigration = 0930;
+						ProvisioningStyle = Automatic;
+					};
+					7DC4215420E2D17700AD3CAE = {
+						CreatedOnToolsVersion = 9.4.1;
+						DevelopmentTeam = 3YCGAR2P8M;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -118,6 +275,7 @@
 			projectRoot = "";
 			targets = (
 				7D254BBE1EF5DF6A004DFD1C /* Formulaes */,
+				7DC4215420E2D17700AD3CAE /* formulaKeyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -129,24 +287,126 @@
 			files = (
 				7D254BCD1EF5DF6A004DFD1C /* LaunchScreen.storyboard in Resources */,
 				7D254BCA1EF5DF6A004DFD1C /* Assets.xcassets in Resources */,
+				7D026DFB20E3FF7600A7D16A /* mathKeyboard1.xib in Resources */,
 				7D254BC81EF5DF6A004DFD1C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7DC4215320E2D17700AD3CAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D4BFDA520E3146700ED57E7 /* testView.xib in Resources */,
+				7D026DFC20E401BB00A7D16A /* mathKeyboard.xib in Resources */,
+				7D4BFDA320E2FBE700ED57E7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		828EB53579EF718E39363372 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9216924475E7381958E8DB21 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVTextDetectorResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E03B599D13C39C91BCD03DFA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Formulaes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7D254BBB1EF5DF6A004DFD1C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D9E66A21F2C2E880090DCFE /* stuff1.swift in Sources */,
+				7D7AD06D1F361FCB00F7DC27 /* postfix calc.swift in Sources */,
+				7D9E66A01F2C2E3F0090DCFE /* sources.swift in Sources */,
+				7D6F64AB1F77322F00A925D9 /* Formulaes.xcdatamodeld in Sources */,
+				7D97782F1F2835EE00143B8B /* shunting yard.swift in Sources */,
 				7D254BC51EF5DF6A004DFD1C /* ViewController.swift in Sources */,
 				7DEEE84B1F09DDF100A1411B /* Formula array saver thing idk.swift in Sources */,
+				7D4C545720901685003AF802 /* Preview.swift in Sources */,
+				7D3615531F5E44460094692F /* FormulaTableViewCell.swift in Sources */,
 				7D254BC31EF5DF6A004DFD1C /* AppDelegate.swift in Sources */,
+				7D070F631F1D3FDF00EC4AED /* equationparserwithtwoindexthings.swift in Sources */,
+				7D1BEE6A1F4F822000766B01 /* thing.swift in Sources */,
+				7D1BEE681F4F7F1900766B01 /* CalcTableViewCell.swift in Sources */,
+				7D4C5459209016F3003AF802 /* CameraViewController.swift in Sources */,
+				7D7C0D991F8FE82E00B9DB9D /* constanttables.swift in Sources */,
+				7DC4214020E2CD3300AD3CAE /* mathKeyboardViewController.swift in Sources */,
+				7DD433131F11C7650029E94C /* FormulasViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DC4215120E2D17700AD3CAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DC4215820E2D17700AD3CAE /* KeyboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7DC4215B20E2D17700AD3CAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7DC4215420E2D17700AD3CAE /* formulaKeyboard */;
+			targetProxy = 7DC4215A20E2D17700AD3CAE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7D254BC61EF5DF6A004DFD1C /* Main.storyboard */ = {
@@ -177,15 +437,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -208,7 +476,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -226,15 +494,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -251,7 +527,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -261,27 +537,83 @@
 		};
 		7D254BD21EF5DF6A004DFD1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0391ACF8E120686273430DF /* Pods-Formulaes.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ETM64S4G26;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3YCGAR2P8M;
 				INFOPLIST_FILE = Formulaes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = d.Formulaes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tmsoftwareinc.Formulaes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		7D254BD31EF5DF6A004DFD1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D499088292CDB0D26268C85 /* Pods-Formulaes.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ETM64S4G26;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3YCGAR2P8M;
 				INFOPLIST_FILE = Formulaes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = d.Formulaes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tmsoftwareinc.Formulaes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7DC4215E20E2D17700AD3CAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3YCGAR2P8M;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = formulaKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tmsoftwareinc.Formulaes.formulaKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7DC4215F20E2D17700AD3CAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3YCGAR2P8M;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = formulaKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tmsoftwareinc.Formulaes.formulaKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -306,7 +638,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		7DC4215D20E2D17700AD3CAE /* Build configuration list for PBXNativeTarget "formulaKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DC4215E20E2D17700AD3CAE /* Debug */,
+				7DC4215F20E2D17700AD3CAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7D6F64A91F77322F00A925D9 /* Formulaes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7D6F64AA1F77322F00A925D9 /* Formulaes.xcdatamodel */,
+			);
+			currentVersion = 7D6F64AA1F77322F00A925D9 /* Formulaes.xcdatamodel */;
+			path = Formulaes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7D254BB71EF5DF6A004DFD1C /* Project object */;
 }

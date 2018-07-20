@@ -9,10 +9,32 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>dummy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>formulaKeyboard.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>mathKeyboard.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>7D254BBE1EF5DF6A004DFD1C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7DC4215420E2D17700AD3CAE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
