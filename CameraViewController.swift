@@ -52,6 +52,12 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         imageView.image = image
         dismiss(animated:true, completion: nil)
+        let thing = imageView.image
+        if thing != nil{
+            textdetthing(thing!)
+            
+            
+        }
     }
    @IBAction func take(_ sender: Any) {
         print("photo lol")

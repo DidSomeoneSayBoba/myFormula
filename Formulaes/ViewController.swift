@@ -11,7 +11,7 @@ import QuartzCore
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var heightThing: NSLayoutConstraint!
     @IBOutlet weak var namePicker: UIPickerView!
-    var Formulaarray:[Formulae] = [StringtoFormula(Formula:"a+b=c",formulaname:"example")]
+    var Formulaarray:[Formulae] = [StringtoFormula(Formula:"a+b=c",formulaname:"ex.formula")]
     var dateindex = 0
     var formulanames:[String] = []
     var resultarray:[history] = []
@@ -221,6 +221,12 @@ var quadformula = "(-b+-√b^2-4ac)/2a=t"
         calchistorytableview.reloadData()
         calcbutton.isEnabled = true
         calculatehere.text = ""
+        var userDefaults = UserDefaults.standard
+        let data = NSKeyedArchiver.archivedData(withRootObject: self.resultarray)
+        userDefaults.set(data, forKey: nameofhistories)
+        print("set data for key \(nameofhistories)")
+        
+        userDefaults.synchronize()
         }
     }
     func stringwithoutcommas(_ a:String)->[Double]{
@@ -240,7 +246,8 @@ var quadformula = "(-b+-√b^2-4ac)/2a=t"
         var index = 0
         var tempstring = ""
         for char in list {
-            if char != "+" || char != "-" || char != "=" || char != "/" || char != "*" || char != "^"  {
+            print("char is ")
+            if char != "+" && char != "-" && char != "=" && char != "/" && char != "*" && char != "^"  {
             if char == " "{
                 print("found space at index \(index)")
                 if(tempstring != ""){

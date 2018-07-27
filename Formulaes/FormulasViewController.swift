@@ -41,8 +41,8 @@ var Formulaarray:[Formulae] = []
 
         if let data = userDefaults.object(forKey: nameofhistories) {
           
-           // resultarray = NSKeyedUnarchiver.unarchiveObject(with: data as! Data) as! [history]
-            //print("myPeopleList: \(Formulaarray[0].formula)")
+           resultarray = NSKeyedUnarchiver.unarchiveObject(with: data as! Data) as! [history]
+            print("myPeopleList: \(Formulaarray[0].formula)")
         }else{
             print("There is an issue")
         }
@@ -70,17 +70,23 @@ var Formulaarray:[Formulae] = []
 
     @IBAction func addFormula(_ sender: Any) {
         var formulastring = self.formula.text
+        var userDefaults = UserDefaults.standard
+        
+        if formulastring == ""{
+        }
+        
+        else{
         if formulastring?.contains("=") == false{
             formulastring = formulastring! + "=a"
         }
-        let formulaname = self.formulaName.text
-        var formula1 = StringtoFormula(Formula: formulastring!, formulaname: formulaname!)
+            let formulaname = self.formulaName.text!+"  "
+            var formula1 = StringtoFormula(Formula: formulastring!, formulaname: formulaname)
         print("formula1.inputs \(formula1.inputs)")
         Formulaarray.append(formula1)
         
         self.formula.text = ""
         self.formulaName.text = ""
-        var userDefaults = UserDefaults.standard
+        
        if (self.Formulaarray.isEmpty) != true {
          
             userDefaults.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
@@ -89,9 +95,10 @@ var Formulaarray:[Formulae] = []
             userDefaults.set(data, forKey: nameofformulaes)
         print("set data \(data) for key \(nameofformulaes)")
         }
-        
+
                 userDefaults.synchronize()
         self.formulalist.reloadData()
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
