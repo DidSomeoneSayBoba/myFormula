@@ -19,11 +19,13 @@
 	<key>CFBundleShortVersionString</key>
 	<string>0.9</string>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>3</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>For Formula Text Detection</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>For saving formula images</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>For Importing Images of Formulas</string>
 	<key>UILaunchStoryboardName</key>

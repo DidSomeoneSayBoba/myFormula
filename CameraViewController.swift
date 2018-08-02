@@ -1,21 +1,29 @@
 import UIKit
 import AVFoundation
 import Vision
-import GoogleMobileVision
+import Photos
+import FirebaseMLVision
+//import GoogleMobileVision
 class CameraViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
    
     var imagePicker: UIImagePickerController!
     @IBOutlet weak var imageView: UIImageView!
     let deviceOutput = AVCapturePhotoOutput()
     @IBOutlet weak var heightThing: NSLayoutConstraint!
-    var textDetector=GMVDetector(ofType: GMVDetectorTypeText, options: nil)
+   // var textDetector=GMVDetector(ofType: GMVDetectorTypeText, options: nil)
     @IBOutlet weak var testLabel: UILabel!
     @IBOutlet weak var formulaField: UITextField!
+     var textDetector: VisionTextDetector!
+    var cloudTextDetector: VisionCloudDocumentTextDetector!
+
     var session = AVCaptureSession()
    // var requests = [VNRequest]()
     override func viewDidLoad() {
         super.viewDidLoad()
        startLiveVideo()
+        let vision = Vision.vision()
+        textDetector = vision.textDetector()
+        cloudTextDetector = vision.cloudDocumentTextDetector()
         self.hideKeyboardWhenTappedAround()
         NotificationCenter.default.addObserver(self, selector: #selector(CameraViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
@@ -40,6 +48,77 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     func keyboardWillHide(notification:NSNotification) {
         adjustingHeight(show: false, notification: notification)
     }
+    func runCloudTextRecognition(with image: UIImage) {
+        let visionImage = VisionImage(image: image)
+        cloudTextDetector.detect(in: visionImage) { features, error in
+            if let error = error {
+                print("Received error: \(error)")
+                return
+            }
+            
+            self.processCloudResult(from: features, error: error)
+        }
+    }
+    func processCloudResult(from text: VisionCloudText?, error: Error?) {
+        
+        guard let features = text, let image = imageView.image, let pages = features.pages else {
+            return
+        }
+        var finalword = ""
+        for page in pages {
+            for block in page.blocks ?? []  {
+                for paragraph in block.paragraphs ?? [] {
+                    for word in paragraph.words ?? [] {
+                        var wordText = ""
+                        for symbol in word.symbols ?? [] {
+                            if let text = symbol.text {
+                                wordText = wordText + text
+                                finalword += text
+                            }
+                        }
+                       
+                    }
+                }
+            }
+        }
+        self.formulaField.text = converttomyformat(finalword)
+    }
+    func converttomyformat(_ equation:String)->String{
+        let array = Array(equation)
+        var final = ""
+        var afterequation = false
+        var firststring = ""
+        var laststring = ""
+        var charusedbefore = false
+        var justchanged = false
+        var myformat = false
+        for char in array{
+            if String(char) == "="{
+         justchanged = true
+                if firststring.count == 1{
+                myformat = true
+                }
+                afterequation = true
+            }
+            else {
+                if afterequation == false{
+                    
+                firststring += String(char)
+            }
+            else{
+            laststring += String(char)
+            }
+        }
+        }
+        if myformat == false{
+        final = equation
+        }
+        else{
+            final = laststring+"="+firststring
+            
+        }
+        return matomta(final)
+    }
     @IBAction func confirm(_ sender: Any) {
         let thing = imageView.image
         if thing != nil{
@@ -47,6 +126,20 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
             
             
         }
+        let snapshot:UIImage = thing!
+        PHPhotoLibrary.shared().performChanges({
+            PHAssetChangeRequest.creationRequestForAsset(from: snapshot)
+        }, completionHandler: { success, error in
+            if success {
+                // Saved successfully!
+            }
+            else if let error = error {
+                // Save photo failed with error
+            }
+            else {
+                // Save photo failed with no error
+            }
+        })
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
@@ -54,7 +147,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         dismiss(animated:true, completion: nil)
         let thing = imageView.image
         if thing != nil{
-            textdetthing(thing!)
+            runCloudTextRecognition(with: thing!)
             
             
         }
@@ -70,7 +163,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         }
     }
     func textdetthing(_ a:UIImage){
-        var thingstring = ""
+      /*  var thingstring = ""
         var features:[GMVTextBlockFeature]=self.textDetector?.features(in: a, options: nil) as! [GMVTextBlockFeature]
         if features != nil{
             for feature in features{
@@ -79,7 +172,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
                 thingstring += feature.value
             }}
         formulaField.text = convertEquation(thingstring)
-        testLabel.text = "Confirm value below"
+        testLabel.text = "Confirm value below"*/
     }
     override func viewWillAppear(_ animated: Bool) {
     }
@@ -105,6 +198,10 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         
         session.startRunning()
        */
+    }
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
     override func viewDidLayoutSubviews() {
        // imageView.layer.sublayers?[0].frame = imageView.bounds

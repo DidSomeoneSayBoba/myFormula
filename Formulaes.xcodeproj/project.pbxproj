@@ -13,6 +13,8 @@
 		7D070F631F1D3FDF00EC4AED /* equationparserwithtwoindexthings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D070F621F1D3FDF00EC4AED /* equationparserwithtwoindexthings.swift */; };
 		7D1BEE681F4F7F1900766B01 /* CalcTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1BEE671F4F7F1900766B01 /* CalcTableViewCell.swift */; };
 		7D1BEE6A1F4F822000766B01 /* thing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1BEE691F4F822000766B01 /* thing.swift */; };
+		7D21F328210FF0F300BCE783 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D21F327210FF0F200BCE783 /* GoogleService-Info.plist */; };
+		7D21F329210FF0F300BCE783 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D21F327210FF0F200BCE783 /* GoogleService-Info.plist */; };
 		7D254BC31EF5DF6A004DFD1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D254BC21EF5DF6A004DFD1C /* AppDelegate.swift */; };
 		7D254BC51EF5DF6A004DFD1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D254BC41EF5DF6A004DFD1C /* ViewController.swift */; };
 		7D254BC81EF5DF6A004DFD1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D254BC61EF5DF6A004DFD1C /* Main.storyboard */; };
@@ -67,6 +69,7 @@
 		7D070F621F1D3FDF00EC4AED /* equationparserwithtwoindexthings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = equationparserwithtwoindexthings.swift; sourceTree = "<group>"; };
 		7D1BEE671F4F7F1900766B01 /* CalcTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcTableViewCell.swift; sourceTree = "<group>"; };
 		7D1BEE691F4F822000766B01 /* thing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = thing.swift; sourceTree = "<group>"; };
+		7D21F327210FF0F200BCE783 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7D254BBF1EF5DF6A004DFD1C /* Formulaes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Formulaes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D254BC21EF5DF6A004DFD1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D254BC41EF5DF6A004DFD1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,11 +133,11 @@
 			isa = PBXGroup;
 			children = (
 				7D4E15C920DB3EE8002D311D /* mathKeyboard.xib */,
-				7D026DF820E3FF6900A7D16A /* mathKeyboard1.xib */,
 				7D6A9E4F20E3FE8100010F2C /* formulaKeyboard.swift */,
 				7D4C545620901685003AF802 /* Preview.swift */,
 				7D4C5458209016F3003AF802 /* CameraViewController.swift */,
 				7D6F64A91F77322F00A925D9 /* Formulaes.xcdatamodeld */,
+				7D026DF820E3FF6900A7D16A /* mathKeyboard1.xib */,
 				7D1BEE671F4F7F1900766B01 /* CalcTableViewCell.swift */,
 				7D4E15BF20DB2A4B002D311D /* mathKeyboardViewController.swift */,
 				7D254BC11EF5DF6A004DFD1C /* Formulaes */,
@@ -158,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				7D254BC21EF5DF6A004DFD1C /* AppDelegate.swift */,
+				7D21F327210FF0F200BCE783 /* GoogleService-Info.plist */,
 				7DEEE84A1F09DDF100A1411B /* Formula array saver thing idk.swift */,
 				7D070F621F1D3FDF00EC4AED /* equationparserwithtwoindexthings.swift */,
 				7D254BC41EF5DF6A004DFD1C /* ViewController.swift */,
@@ -208,8 +212,8 @@
 				7D254BBC1EF5DF6A004DFD1C /* Frameworks */,
 				7D254BBD1EF5DF6A004DFD1C /* Resources */,
 				7D4E15C820DB2A4B002D311D /* Embed App Extensions */,
-				828EB53579EF718E39363372 /* [CP] Embed Pods Frameworks */,
-				9216924475E7381958E8DB21 /* [CP] Copy Pods Resources */,
+				DE74BFF0E9E8A02508A74A53 /* [CP] Embed Pods Frameworks */,
+				A72E7CD2DA8B2750F5D64CD0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -287,6 +291,7 @@
 			files = (
 				7D254BCD1EF5DF6A004DFD1C /* LaunchScreen.storyboard in Resources */,
 				7D254BCA1EF5DF6A004DFD1C /* Assets.xcassets in Resources */,
+				7D21F328210FF0F300BCE783 /* GoogleService-Info.plist in Resources */,
 				7D026DFB20E3FF7600A7D16A /* mathKeyboard1.xib in Resources */,
 				7D254BC81EF5DF6A004DFD1C /* Main.storyboard in Resources */,
 			);
@@ -297,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D4BFDA520E3146700ED57E7 /* testView.xib in Resources */,
+				7D21F329210FF0F300BCE783 /* GoogleService-Info.plist in Resources */,
 				7D026DFC20E401BB00A7D16A /* mathKeyboard.xib in Resources */,
 				7D4BFDA320E2FBE700ED57E7 /* Assets.xcassets in Resources */,
 			);
@@ -305,29 +311,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		828EB53579EF718E39363372 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9216924475E7381958E8DB21 /* [CP] Copy Pods Resources */ = {
+		A72E7CD2DA8B2750F5D64CD0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -343,6 +327,32 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE74BFF0E9E8A02508A74A53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E03B599D13C39C91BCD03DFA /* [CP] Check Pods Manifest.lock */ = {
@@ -544,7 +554,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3YCGAR2P8M;
 				INFOPLIST_FILE = Formulaes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tmsoftwareinc.myFormulas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -563,7 +573,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3YCGAR2P8M;
 				INFOPLIST_FILE = Formulaes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tmsoftwareinc.myFormulas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -585,7 +595,7 @@
 				DEVELOPMENT_TEAM = 3YCGAR2P8M;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = formulaKeyboard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tmsoftwareinc.myFormulas.formulaKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -607,7 +617,7 @@
 				DEVELOPMENT_TEAM = 3YCGAR2P8M;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = formulaKeyboard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tmsoftwareinc.myFormulas.formulaKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";

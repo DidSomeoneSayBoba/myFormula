@@ -69,18 +69,18 @@ var Formulaarray:[Formulae] = []
     }
 
     @IBAction func addFormula(_ sender: Any) {
-        var formulastring = self.formula.text
+        var formulastring = converttomyformat(self.formula.text!)
         var userDefaults = UserDefaults.standard
         
         if formulastring == ""{
         }
         
         else{
-        if formulastring?.contains("=") == false{
-            formulastring = formulastring! + "=a"
+            if formulastring.contains("=") == false{
+                formulastring = formulastring + "=a"
         }
             let formulaname = self.formulaName.text!+"  "
-            var formula1 = StringtoFormula(Formula: formulastring!, formulaname: formulaname)
+            var formula1 = StringtoFormula(Formula: formulastring, formulaname: formulaname)
         print("formula1.inputs \(formula1.inputs)")
         Formulaarray.append(formula1)
         
@@ -104,7 +104,42 @@ var Formulaarray:[Formulae] = []
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func converttomyformat(_ equation:String)->String{
+        let array = Array(equation)
+        var final = ""
+        var afterequation = false
+        var firststring = ""
+        var laststring = ""
+        var charusedbefore = false
+        var justchanged = false
+        var myformat = false
+        for char in array{
+            if String(char) == "="{
+                justchanged = true
+                if firststring.count == 1{
+                    myformat = true
+                }
+                afterequation = true
+            }
+            else {
+                if afterequation == false{
+                    
+                    firststring += String(char)
+                }
+                else{
+                    laststring += String(char)
+                }
+            }
+        }
+        if myformat == false{
+            final = equation
+        }
+        else{
+            final = laststring+"="+firststring
+            
+        }
+        return matomta(final)
+    }
 
     /*
     // MARK: - Navigation

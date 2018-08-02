@@ -11,6 +11,7 @@ import QuartzCore
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var heightThing: NSLayoutConstraint!
     @IBOutlet weak var namePicker: UIPickerView!
+    
     var Formulaarray:[Formulae] = [StringtoFormula(Formula:"a+b=c",formulaname:"ex.formula")]
     var dateindex = 0
     var formulanames:[String] = []
@@ -36,7 +37,7 @@ var quadformula = "(-b+-√b^2-4ac)/2a=t"
         // 3
         let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
         // 4
-        let changeInHeight = (keyboardFrame.height+20)*(show ? -1 : 1)
+        let changeInHeight = (keyboardFrame.height+30)*(show ? -1 : 1)
         //5
         heightThing.constant = heightThing.constant - changeInHeight
         
@@ -50,6 +51,7 @@ var quadformula = "(-b+-√b^2-4ac)/2a=t"
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(matomta("abc=f"))
         self.hideKeyboardWhenTappedAround()
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
@@ -92,6 +94,7 @@ var quadformula = "(-b+-√b^2-4ac)/2a=t"
         var thin = postfixEvaluate(equation1: test2.run2(testintarray))
         
        */
+        
         OperationQueue.main.addOperation({
             
             self.calchistorytableview.delegate = self
@@ -120,6 +123,8 @@ var quadformula = "(-b+-√b^2-4ac)/2a=t"
         let string = Array(signString)
         let signs = ["?","$","@"]
     }
+    
+    //abc=f
     @IBAction func calculate(_ sender: Any) {
    /*var userDefaults = UserDefaults.standard
         userDefaults.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)

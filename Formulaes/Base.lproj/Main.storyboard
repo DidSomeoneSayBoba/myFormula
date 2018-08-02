@@ -37,6 +37,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pt5-2b-M0T">
                                 <rect key="frame" x="0.0" y="91" width="375" height="428"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pt5-2b-M0T" secondAttribute="height" multiplier="375:428" id="Afp-Z0-dKx"/>
+                                </constraints>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -95,7 +98,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                 <connections>
                                     <action selector="changed:" destination="BYZ-38-t0r" eventType="valueChanged" id="eoT-A9-hBH"/>
                                 </connections>
@@ -195,6 +198,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2RK-SP-96n">
                                 <rect key="frame" x="0.0" y="93" width="375" height="459"/>
                                 <color key="backgroundColor" red="0.97832815360000003" green="0.96388928959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2RK-SP-96n" secondAttribute="height" multiplier="125:153" id="oam-9K-YG2"/>
+                                </constraints>
                                 <color key="separatorColor" red="0.97832815360000003" green="0.96388928959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="66" id="vXu-fQ-rvd" customClass="FormulaTableViewCell" customModule="Formulaes" customModuleProvider="target">
@@ -285,7 +291,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k28-I0-3HS">
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k28-I0-3HS">
                                 <rect key="frame" x="105.5" y="63" width="164" height="30"/>
                                 <color key="backgroundColor" red="0.5089368568" green="0.64382307100000002" blue="0.999211238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Picture to Formula(WIP)">
@@ -385,7 +391,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgn-ff-0Xw">
                                 <rect key="frame" x="16" y="498" width="343" height="43"/>
@@ -393,7 +399,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lgn-ff-0Xw" secondAttribute="height" multiplier="343:43" id="NkU-r0-aT8"/>
                                 </constraints>
-                                <state key="normal" title="Confirm (displays detected text here)">
+                                <state key="normal" title="Save Image to Camera Roll">
                                     <color key="titleColor" red="0.97832815360000003" green="0.96388928959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>

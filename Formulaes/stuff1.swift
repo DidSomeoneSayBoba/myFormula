@@ -235,7 +235,7 @@ func infixtopostfix(_ infix:String)->String{
     var expr = InfixExpressionBuilder()
     let array = Array(infix)
     let digits = ["1","2","3","4","5","6","7","8","9","0","p","K","e","π","φ"]
-    let letters = ["A","B","C","D","F","G","H","I","J","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","f","g","h","i","j","k","l","m","n","o","q","r","s","t","u","v","w","x","y","z"]
+    let letters = ["A","B","C","D","E","F","G","H","I","J","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","f","g","h","i","j","k","l","m","n","o","q","r","s","t","u","v","w","x","y","z"]
     var tempstr = ""
     var tempnum = 0.0
     var number = false
