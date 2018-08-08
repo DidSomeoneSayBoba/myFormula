@@ -300,10 +300,10 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
             if let destination = segue.destination as? FormulasViewController {
                 if formulaField.text! != ""{
                 if formulaField.text!.contains("="){
-                destination.gottem = self.formulaField.text!
+                    destination.gottem = converttomyformat(self.formulaField.text!)
                 }
                 else{
-                    destination.gottem = self.formulaField.text!+"=a"
+                    destination.gottem = converttomyformat(self.formulaField.text!+"=a")
                 }
             }
             }

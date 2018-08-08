@@ -11,6 +11,7 @@ import Foundation
 class Formulae: NSObject, NSCoding{
     var inputs:[String] = []
     var formula:String = ""
+    var outputs:[String] = []
     var name:String = ""
     var output = ""
     var outputlist:[String] = []
@@ -59,6 +60,74 @@ class Formulae: NSObject, NSCoding{
         
        return infixtopostfix(final)
     }
+    func equationMeme(_ inputs:[String])->String{
+        var inputs2:[String] = []
+        for thing in inputs{
+            if thing == "p"{
+                inputs2.append("π")
+            }
+            else{
+                inputs2.append(thing)
+            }
+        }
+        var pi = 3.14159265358979323
+        let digits = CharacterSet.decimalDigits
+        var opers:[String] = ["+","-","/","*"]
+        
+        var operators:[String] = []
+        var numbers:[Double] = []
+        var entireformula:[String] = []
+        var formula = Array(self.formula.characters)
+        var forformula = formula
+        var index = 0
+        var iss = false
+        var isi = false
+        var outputindex = 0
+        var inputindex = 0
+        var final = ""
+        for char in formula {
+            if String(char) == "い"{
+                final += String(inputs2[inputindex])
+                /*
+                 if String(inputs[inputindex]).characters.count>1{
+                 var index1 = 0
+                 var numberstring = ""
+                 var charray:[Character] = []
+                 for char in String(inputs[inputindex]).characters{
+                 numberstring += String(char)
+                 charray.append(char)
+                 /*}
+                 var index2 = 0
+                 for char1 in charray{
+                 
+                 if index2 == 0{
+                 forformula[index] = char1
+                 }
+                 else{
+                 forformula.insert(char1,at:index)
+                 print("i think i screwed up, cuz infix is \(formula) but postfix is \(forformula)")
+                 index+=1
+                 }
+                 index2+=1
+                 
+                 }
+                 index1 = 0*/
+                 
+                 }*/
+                inputindex += 1
+            }
+            else{
+                if String(char) == "お"{
+                    
+                }
+                else{
+                    final += String(char)}
+            }
+            
+        }
+        index+=1
+        return final
+    }
     func toEquation(_ inputs:[Double]) ->String{
         var pi = 3.14159265358979323
         let digits = CharacterSet.decimalDigits
@@ -72,7 +141,7 @@ class Formulae: NSObject, NSCoding{
         var index = 0
         var iss = false
         var isi = false
-        
+        var outputindex = 0
         var inputindex = 0
         var final = ""
         for char in formula {
@@ -108,7 +177,7 @@ class Formulae: NSObject, NSCoding{
             }
             else{
                 if String(char) == "お"{
-                        
+                   
                 }
                 else{
                     final += String(char)}
@@ -244,6 +313,15 @@ class Formulae: NSObject, NSCoding{
         let digits = CharacterSet.decimalDigits
         var opers:[String] = ["+","-","/","*"]
         
+        var inputs2:[String] = []
+        for char in self.inputs{
+            if char == "p"{
+                inputs2.append("π")
+            }
+            else{
+                inputs2.append(char)
+            }
+        }
         var operators:[String] = []
         var numbers:[Double] = []
         var entireformula:[String] = []
@@ -257,7 +335,7 @@ class Formulae: NSObject, NSCoding{
         var final = ""
         for char in formula {
             if String(char) == "い"{
-                final += self.inputs[index]
+                final += inputs2[index]
                 index+=1
                 /*
                  if String(inputs[inputindex]).characters.count>1{

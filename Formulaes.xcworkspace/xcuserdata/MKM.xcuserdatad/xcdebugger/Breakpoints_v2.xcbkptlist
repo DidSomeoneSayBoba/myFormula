@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CameraViewController.swift"
-            timestampString = "554911413.679791"
+            timestampString = "555387365.471236"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "172"
@@ -58,13 +58,91 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CameraViewController.swift"
-            timestampString = "554911413.6800539"
+            timestampString = "555387365.471517"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2"
             endingLineNumber = "2"
             landmarkName = "unknown"
             landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CalcTableViewCell.swift"
+            timestampString = "555371562.1231869"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "CalcTableViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Formulaes.CalcTableViewCell.formula.getter : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;"
+                  moduleName = "Formulaes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MKM/Documents/Formulaesconvenientname/CalcTableViewCell.swift"
+                  timestampString = "555369588.6495"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Formulaes.CalcTableViewCell.formula.setter : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;"
+                  moduleName = "Formulaes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MKM/Documents/Formulaesconvenientname/CalcTableViewCell.swift"
+                  timestampString = "555369588.6636781"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Formulaes.CalcTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; Formulaes.CalcTableViewCell"
+                  moduleName = "Formulaes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MKM/Documents/Formulaesconvenientname/CalcTableViewCell.swift"
+                  timestampString = "555369588.6762201"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "576">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Formulaes.CalcTableViewCell.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Formulaes.CalcTableViewCell&gt;"
+                  moduleName = "Formulaes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MKM/Documents/Formulaesconvenientname/CalcTableViewCell.swift"
+                  timestampString = "555369588.690761"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "540">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

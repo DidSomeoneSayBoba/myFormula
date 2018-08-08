@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var heightThing: NSLayoutConstraint!
     @IBOutlet weak var namePicker: UIPickerView!
     
-    var Formulaarray:[Formulae] = [StringtoFormula(Formula:"a+b=c",formulaname:"ex.formula")]
+    var Formulaarray:[Formulae] = [StringtoFormula(Formula:"a+b=c",formulaname:"ex.formula ")]
     var dateindex = 0
     var formulanames:[String] = []
     var resultarray:[history] = []
@@ -201,30 +201,39 @@ var quadformula = "(-b+-√b^2-4ac)/2a=t"
     }
     else{
         calcbutton.isEnabled = false
-        
+        let things2 = stringwithoutcommas1(calculatehere.text!)
         let thing = stringwithoutcommas(calculatehere.text!)
         
         
         print(thing)
         let formula = Formulaarray[namePicker.selectedRow(inComponent: 0)]
+        if thing.count > formula.inputs.count{
+            calculatehere.text = "Error:too many inputs"
+        }
+        else if thing.count < formula.inputs.count{
+            calculatehere.text = "Error:not enough inputs"
+        }
+        else{
+        let wow = replaceAliases(formula.equationMeme(things2))
         let postfixformula = formula.run2(thing)
         print("postfixformula is \(postfixformula)")
         print("postfixEvaluate(equation1: postfixformula) is \(postfixEvaluate(equation1: postfixformula))")
         let date1 = Date()
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.dateFormat = "dd/MM/yyyy"
         let date = formatter.string(from:date1)
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date1)
         let minutes = calendar.component(.minute, from: date1)
         let whole = "\(date),\(hour):\(minutes)"
-        let result = "\(formula.toEquation(thing))"+String(postfixEvaluate(equation1: postfixformula))
+        print("wow wow is \(wow)")
+        let result = "\(wow)"+String(Double(round(postfixEvaluate(equation1: postfixformula)*10000))/10000)
         let formulaname = Formulaarray[namePicker.selectedRow(inComponent:0)].name
-        let historything = history(Formulaname:formulaname, equation:replaceAliases(convertEquation(result)), date:whole)
+        let historything = history(Formulaname:formulaname, equation:/*replaceAliases(convertEquation(result))*/result, date:whole)
         resultarray.append(historything)
         //works?
         calchistorytableview.reloadData()
-        calcbutton.isEnabled = true
+        
         calculatehere.text = ""
         var userDefaults = UserDefaults.standard
         let data = NSKeyedArchiver.archivedData(withRootObject: self.resultarray)
@@ -232,6 +241,8 @@ var quadformula = "(-b+-√b^2-4ac)/2a=t"
         print("set data for key \(nameofhistories)")
         
         userDefaults.synchronize()
+        }
+        calcbutton.isEnabled = true
         }
     }
     func stringwithoutcommas(_ a:String)->[Double]{
@@ -269,6 +280,45 @@ var quadformula = "(-b+-√b^2-4ac)/2a=t"
             
         }
         index += 1
+            }
+        }
+        return stirng
+    }
+    func stringwithoutcommas1(_ a:String)->[String]{
+        
+        let list1 = Array(a)
+        var list:[String] = []
+        for thing in list1{
+            if String(thing) != ","{
+                
+                list.append(String(thing))}
+            else{
+                list.append(" ")
+            }
+        }
+        
+        var stirng:[String] = []
+        var index = 0
+        var tempstring = ""
+        for char in list {
+            print("char is ")
+            if char != "+" && char != "-" && char != "=" && char != "/" && char != "*" && char != "^"  {
+                if char == " "{
+                    print("found space at index \(index)")
+                    if(tempstring != ""){
+                        stirng.append(tempstring)
+                        tempstring = ""
+                    }
+                }
+                else{
+                    tempstring += char
+                    
+                    if index == list.count-1{
+                        stirng.append(tempstring)
+                    }
+                    
+                }
+                index += 1
             }
         }
         return stirng
@@ -316,7 +366,7 @@ var quadformula = "(-b+-√b^2-4ac)/2a=t"
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1    }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        var converted = convertEquation(Formulaarray[row].toEquation1())
+        var converted = replaceAliases(Formulaarray[row].toEquation1())
         print("converted = \(converted)")
         egformula.text = replaceAliases(converted)
     }

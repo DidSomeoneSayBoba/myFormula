@@ -239,7 +239,7 @@ func infixtopostfix(_ infix:String)->String{
     var tempstr = ""
     var tempnum = 0.0
     var number = false
-    var double = true
+    var double = false
     var index = 0
     var finalindex = array.count-1
     print("finalindex = \(finalindex)")

@@ -28,7 +28,7 @@ var Formulaarray:[Formulae] = []
       formulalist.layer.borderWidth=2.0
        //NotificationCenter.default.addObserver(self, selector: #selector(FormulasViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         if gottem != ""{
-            gottem1 = StringtoFormula(Formula: gottem, formulaname: "scan")}
+            gottem1 = StringtoFormula(Formula: gottem, formulaname: "scan ")}
        // NotificationCenter.default.addObserver(self, selector: #selector(FormulasViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         print("saved object: \(userDefaults.object(forKey: nameofformulaes))")
