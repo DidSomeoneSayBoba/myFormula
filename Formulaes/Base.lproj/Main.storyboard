@@ -300,7 +300,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="k28-I0-3HS" secondAttribute="height" multiplier="82:15" id="Ahy-vy-pGB"/>
                                 </constraints>
-                                <state key="normal" title="Picture to Formula(WIP)">
+                                <state key="normal" title="Picture to Formula">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -373,7 +373,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xyF-n4-sBL" secondAttribute="height" multiplier="187:57" id="QuL-k4-cGF"/>
                                 </constraints>
-                                <state key="normal" title="Open Camera">
+                                <state key="normal" title="Take Picture">
                                     <color key="titleColor" red="0.97832815360000003" green="0.96388928959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>

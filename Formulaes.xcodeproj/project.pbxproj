@@ -13,8 +13,6 @@
 		7D070F631F1D3FDF00EC4AED /* equationparserwithtwoindexthings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D070F621F1D3FDF00EC4AED /* equationparserwithtwoindexthings.swift */; };
 		7D1BEE681F4F7F1900766B01 /* CalcTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1BEE671F4F7F1900766B01 /* CalcTableViewCell.swift */; };
 		7D1BEE6A1F4F822000766B01 /* thing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1BEE691F4F822000766B01 /* thing.swift */; };
-		7D21F328210FF0F300BCE783 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D21F327210FF0F200BCE783 /* GoogleService-Info.plist */; };
-		7D21F329210FF0F300BCE783 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D21F327210FF0F200BCE783 /* GoogleService-Info.plist */; };
 		7D254BC31EF5DF6A004DFD1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D254BC21EF5DF6A004DFD1C /* AppDelegate.swift */; };
 		7D254BC51EF5DF6A004DFD1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D254BC41EF5DF6A004DFD1C /* ViewController.swift */; };
 		7D254BC81EF5DF6A004DFD1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D254BC61EF5DF6A004DFD1C /* Main.storyboard */; };
@@ -27,6 +25,7 @@
 		7D4C5459209016F3003AF802 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C5458209016F3003AF802 /* CameraViewController.swift */; };
 		7D6F64A81F77320100A925D9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6F64A71F77320100A925D9 /* CoreData.framework */; };
 		7D6F64AB1F77322F00A925D9 /* Formulaes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F64A91F77322F00A925D9 /* Formulaes.xcdatamodeld */; };
+		7D6FEB162167CAB30079EB2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D6FEB152167CAB30079EB2A /* GoogleService-Info.plist */; };
 		7D7AD06D1F361FCB00F7DC27 /* postfix calc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7AD06C1F361FCB00F7DC27 /* postfix calc.swift */; };
 		7D7C0D991F8FE82E00B9DB9D /* constanttables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C0D981F8FE82E00B9DB9D /* constanttables.swift */; };
 		7D97782F1F2835EE00143B8B /* shunting yard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D97782E1F2835EE00143B8B /* shunting yard.swift */; };
@@ -69,7 +68,6 @@
 		7D070F621F1D3FDF00EC4AED /* equationparserwithtwoindexthings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = equationparserwithtwoindexthings.swift; sourceTree = "<group>"; };
 		7D1BEE671F4F7F1900766B01 /* CalcTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcTableViewCell.swift; sourceTree = "<group>"; };
 		7D1BEE691F4F822000766B01 /* thing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = thing.swift; sourceTree = "<group>"; };
-		7D21F327210FF0F200BCE783 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7D254BBF1EF5DF6A004DFD1C /* Formulaes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Formulaes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D254BC21EF5DF6A004DFD1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D254BC41EF5DF6A004DFD1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +84,7 @@
 		7D6A9E4F20E3FE8100010F2C /* formulaKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formulaKeyboard.swift; sourceTree = "<group>"; };
 		7D6F64A71F77320100A925D9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7D6F64AA1F77322F00A925D9 /* Formulaes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Formulaes.xcdatamodel; sourceTree = "<group>"; };
+		7D6FEB152167CAB30079EB2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7D7AD06C1F361FCB00F7DC27 /* postfix calc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "postfix calc.swift"; sourceTree = "<group>"; };
 		7D7C0D981F8FE82E00B9DB9D /* constanttables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constanttables.swift; sourceTree = "<group>"; };
 		7D97782E1F2835EE00143B8B /* shunting yard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "shunting yard.swift"; sourceTree = "<group>"; };
@@ -161,12 +160,12 @@
 			isa = PBXGroup;
 			children = (
 				7D254BC21EF5DF6A004DFD1C /* AppDelegate.swift */,
-				7D21F327210FF0F200BCE783 /* GoogleService-Info.plist */,
 				7DEEE84A1F09DDF100A1411B /* Formula array saver thing idk.swift */,
 				7D070F621F1D3FDF00EC4AED /* equationparserwithtwoindexthings.swift */,
 				7D254BC41EF5DF6A004DFD1C /* ViewController.swift */,
 				7D7C0D981F8FE82E00B9DB9D /* constanttables.swift */,
 				7D7AD06C1F361FCB00F7DC27 /* postfix calc.swift */,
+				7D6FEB152167CAB30079EB2A /* GoogleService-Info.plist */,
 				7DD433121F11C7650029E94C /* FormulasViewController.swift */,
 				7D3615521F5E44460094692F /* FormulaTableViewCell.swift */,
 				7D1BEE691F4F822000766B01 /* thing.swift */,
@@ -174,9 +173,9 @@
 				7D254BC91EF5DF6A004DFD1C /* Assets.xcassets */,
 				7D254BCB1EF5DF6A004DFD1C /* LaunchScreen.storyboard */,
 				7D254BCE1EF5DF6A004DFD1C /* Info.plist */,
-				7D97782E1F2835EE00143B8B /* shunting yard.swift */,
 				7D9E669F1F2C2E3F0090DCFE /* sources.swift */,
 				7D9E66A11F2C2E880090DCFE /* stuff1.swift */,
+				7D97782E1F2835EE00143B8B /* shunting yard.swift */,
 			);
 			path = Formulaes;
 			sourceTree = "<group>";
@@ -291,9 +290,9 @@
 			files = (
 				7D254BCD1EF5DF6A004DFD1C /* LaunchScreen.storyboard in Resources */,
 				7D254BCA1EF5DF6A004DFD1C /* Assets.xcassets in Resources */,
-				7D21F328210FF0F300BCE783 /* GoogleService-Info.plist in Resources */,
 				7D026DFB20E3FF7600A7D16A /* mathKeyboard1.xib in Resources */,
 				7D254BC81EF5DF6A004DFD1C /* Main.storyboard in Resources */,
+				7D6FEB162167CAB30079EB2A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +301,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D4BFDA520E3146700ED57E7 /* testView.xib in Resources */,
-				7D21F329210FF0F300BCE783 /* GoogleService-Info.plist in Resources */,
 				7D026DFC20E401BB00A7D16A /* mathKeyboard.xib in Resources */,
 				7D4BFDA320E2FBE700ED57E7 /* Assets.xcassets in Resources */,
 			);
