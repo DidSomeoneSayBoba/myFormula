@@ -31,6 +31,7 @@
 		7D97782F1F2835EE00143B8B /* shunting yard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D97782E1F2835EE00143B8B /* shunting yard.swift */; };
 		7D9E66A01F2C2E3F0090DCFE /* sources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E669F1F2C2E3F0090DCFE /* sources.swift */; };
 		7D9E66A21F2C2E880090DCFE /* stuff1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E66A11F2C2E880090DCFE /* stuff1.swift */; };
+		7DA1E8FD21876761006A2D52 /* algebra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1E8FC21876761006A2D52 /* algebra.swift */; };
 		7DC4214020E2CD3300AD3CAE /* mathKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4E15BF20DB2A4B002D311D /* mathKeyboardViewController.swift */; };
 		7DC4215820E2D17700AD3CAE /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC4215720E2D17700AD3CAE /* KeyboardViewController.swift */; };
 		7DC4215C20E2D17700AD3CAE /* formulaKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7DC4215520E2D17700AD3CAE /* formulaKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -90,6 +91,7 @@
 		7D97782E1F2835EE00143B8B /* shunting yard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "shunting yard.swift"; sourceTree = "<group>"; };
 		7D9E669F1F2C2E3F0090DCFE /* sources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sources.swift; sourceTree = "<group>"; };
 		7D9E66A11F2C2E880090DCFE /* stuff1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stuff1.swift; sourceTree = "<group>"; };
+		7DA1E8FC21876761006A2D52 /* algebra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = algebra.swift; sourceTree = "<group>"; };
 		7DC4215520E2D17700AD3CAE /* formulaKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = formulaKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC4215720E2D17700AD3CAE /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		7DC4215920E2D17700AD3CAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				7D254BC21EF5DF6A004DFD1C /* AppDelegate.swift */,
 				7DEEE84A1F09DDF100A1411B /* Formula array saver thing idk.swift */,
 				7D070F621F1D3FDF00EC4AED /* equationparserwithtwoindexthings.swift */,
+				7DA1E8FC21876761006A2D52 /* algebra.swift */,
 				7D254BC41EF5DF6A004DFD1C /* ViewController.swift */,
 				7D7C0D981F8FE82E00B9DB9D /* constanttables.swift */,
 				7D7AD06C1F361FCB00F7DC27 /* postfix calc.swift */,
@@ -382,6 +385,7 @@
 				7D7AD06D1F361FCB00F7DC27 /* postfix calc.swift in Sources */,
 				7D9E66A01F2C2E3F0090DCFE /* sources.swift in Sources */,
 				7D6F64AB1F77322F00A925D9 /* Formulaes.xcdatamodeld in Sources */,
+				7DA1E8FD21876761006A2D52 /* algebra.swift in Sources */,
 				7D97782F1F2835EE00143B8B /* shunting yard.swift in Sources */,
 				7D254BC51EF5DF6A004DFD1C /* ViewController.swift in Sources */,
 				7DEEE84B1F09DDF100A1411B /* Formula array saver thing idk.swift in Sources */,

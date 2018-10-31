@@ -31,6 +31,7 @@ var quadformula = "(-b+-√b^2-4ac)/2a=t"
     var testmultipleinputs = "t+a+b=c"
     func adjustingHeight(show:Bool, notification:NSNotification) {
         // 1
+        
         var userInfo = notification.userInfo!
         // 2
         let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
@@ -51,6 +52,7 @@ var quadformula = "(-b+-√b^2-4ac)/2a=t"
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        print();
         print(matomta("abc=f"))
         self.hideKeyboardWhenTappedAround()
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
