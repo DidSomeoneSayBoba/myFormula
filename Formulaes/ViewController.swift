@@ -52,7 +52,12 @@ var quadformula = "(-b+-√b^2-4ac)/2a=t"
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print();
+        var lolall = specVar(StringtopseudoFormula(Formula:matomta("abc=f"),formulaname:"test3"),3)
+         var lolall1 = specVar(StringtopseudoFormula(Formula:matomta("abc=f"),formulaname:"test4"),2)
+        print("lol hi "+lolall);
+        print("also whichSide thing\(whichSide(lolall1))");
+        print("lol hi 2 "+lolall1);
+        print("also whichSide thing  with 2\(whichSide(lolall1))");
         print(matomta("abc=f"))
         self.hideKeyboardWhenTappedAround()
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)

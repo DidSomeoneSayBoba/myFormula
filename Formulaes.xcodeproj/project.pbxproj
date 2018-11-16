@@ -23,6 +23,7 @@
 		7D4BFDA520E3146700ED57E7 /* testView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D4BFDA420E3146700ED57E7 /* testView.xib */; };
 		7D4C545720901685003AF802 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C545620901685003AF802 /* Preview.swift */; };
 		7D4C5459209016F3003AF802 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C5458209016F3003AF802 /* CameraViewController.swift */; };
+		7D64DD13218A0DCB00730D96 /* pseudoFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D64DD12218A0DCB00730D96 /* pseudoFormula.swift */; };
 		7D6F64A81F77320100A925D9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6F64A71F77320100A925D9 /* CoreData.framework */; };
 		7D6F64AB1F77322F00A925D9 /* Formulaes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F64A91F77322F00A925D9 /* Formulaes.xcdatamodeld */; };
 		7D6FEB162167CAB30079EB2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D6FEB152167CAB30079EB2A /* GoogleService-Info.plist */; };
@@ -82,6 +83,7 @@
 		7D4C5458209016F3003AF802 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		7D4E15BF20DB2A4B002D311D /* mathKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mathKeyboardViewController.swift; sourceTree = "<group>"; };
 		7D4E15C920DB3EE8002D311D /* mathKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = mathKeyboard.xib; sourceTree = "<group>"; };
+		7D64DD12218A0DCB00730D96 /* pseudoFormula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pseudoFormula.swift; sourceTree = "<group>"; };
 		7D6A9E4F20E3FE8100010F2C /* formulaKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formulaKeyboard.swift; sourceTree = "<group>"; };
 		7D6F64A71F77320100A925D9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7D6F64AA1F77322F00A925D9 /* Formulaes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Formulaes.xcdatamodel; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				7D254BC21EF5DF6A004DFD1C /* AppDelegate.swift */,
 				7DEEE84A1F09DDF100A1411B /* Formula array saver thing idk.swift */,
 				7D070F621F1D3FDF00EC4AED /* equationparserwithtwoindexthings.swift */,
+				7D64DD12218A0DCB00730D96 /* pseudoFormula.swift */,
 				7DA1E8FC21876761006A2D52 /* algebra.swift */,
 				7D254BC41EF5DF6A004DFD1C /* ViewController.swift */,
 				7D7C0D981F8FE82E00B9DB9D /* constanttables.swift */,
@@ -398,6 +401,7 @@
 				7D4C5459209016F3003AF802 /* CameraViewController.swift in Sources */,
 				7D7C0D991F8FE82E00B9DB9D /* constanttables.swift in Sources */,
 				7DC4214020E2CD3300AD3CAE /* mathKeyboardViewController.swift in Sources */,
+				7D64DD13218A0DCB00730D96 /* pseudoFormula.swift in Sources */,
 				7DD433131F11C7650029E94C /* FormulasViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
