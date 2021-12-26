@@ -1,0 +1,6 @@
+framework module Pods_Formulaes {
+  umbrella header "Pods-Formulaes-umbrella.h"
+
+  export *
+  module * { export * }
+}
