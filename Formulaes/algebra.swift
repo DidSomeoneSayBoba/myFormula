@@ -24,6 +24,13 @@ func lonelyVar(_ equation:Formulae,_ thvar:Int)->Bool{
     }
     
 }
+func isolateVar(_ equation:String,_ thvar:Int)->String{
+    var final = ""
+    print(infixtopostfix(equation))
+    var beforequal = whichSide(equation)
+    return final
+}
+
 func whichSide(_ equation:String)->Bool{
     print("start of whichSide , false means before, true means after equal sign")
         //true when before equal false when
@@ -95,3 +102,13 @@ func specVar(_ equation:pseudoFormula,_ thvar:Int)->String{
     
 }
 
+func formulatoPseudo(_ formula:Formulae)->pseudoFormula
+{
+    var pseudo = StringtopseudoFormula(Formula:formula.toEquation1(),formulaname:formula.name)
+    return pseudo
+}
+func pseudotoFormula(_ pseudo:pseudoFormula)->Formulae
+{
+    var formula = StringtoFormula(Formula:pseudo.toEquation(),formulaname:pseudo.name)
+    return formula
+}

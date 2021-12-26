@@ -217,8 +217,8 @@
 				7D254BBC1EF5DF6A004DFD1C /* Frameworks */,
 				7D254BBD1EF5DF6A004DFD1C /* Resources */,
 				7D4E15C820DB2A4B002D311D /* Embed App Extensions */,
-				DE74BFF0E9E8A02508A74A53 /* [CP] Embed Pods Frameworks */,
-				A72E7CD2DA8B2750F5D64CD0 /* [CP] Copy Pods Resources */,
+				B47AE8C5187A24BB86AF311A /* [CP] Embed Pods Frameworks */,
+				D8928C89CA94D4DFDEEE6EB2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -315,25 +315,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A72E7CD2DA8B2750F5D64CD0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVTextDetectorResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DE74BFF0E9E8A02508A74A53 /* [CP] Embed Pods Frameworks */ = {
+		B47AE8C5187A24BB86AF311A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -357,6 +339,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8928C89CA94D4DFDEEE6EB2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVTextDetectorResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E03B599D13C39C91BCD03DFA /* [CP] Check Pods Manifest.lock */ = {

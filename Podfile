@@ -6,8 +6,8 @@ target 'Formulaes' do
   use_frameworks!
 
   # Pods for Formulaes
- pod 'Firebase/Core'
- pod 'Firebase/MLVision'
+pod 'Firebase/Core'
+pod 'Firebase/MLVision'
  pod 'Firebase/MLVisionTextModel'
 
 end

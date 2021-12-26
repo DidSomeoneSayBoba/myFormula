@@ -8,7 +8,6 @@
 
 import Foundation
 
-//: Playground - noun: a place where people can play
 internal enum OperatorAssociativity {
     case leftAssociative
     case rightAssociative
@@ -79,12 +78,12 @@ public struct OperatorToken: CustomStringConvertible {
         switch operatorType {
         case .add, .subtract:
             return 0
-        case .trig:
-            return 20
         case .divide, .multiply, .percent:
             return 5
         case .exponent, .root, .log:
             return 10
+        case .trig:
+            return 20
         }
     }
     

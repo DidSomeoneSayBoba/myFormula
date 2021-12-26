@@ -31,4 +31,18 @@ class pseudoFormula: NSObject, NSCoding{
         with.encode(self.inputs, forKey: "inputs");
         with.encode(self.formula, forKey: "formula");
     }
+    func toEquation()->String{
+        var thing = Array(formula)
+        var final = ""
+        var index = 0
+        for char in thing{
+            if char=="い"{
+                final+=inputs[index]
+            }
+            else{
+                final+=inputs[index]
+            }
+        }
+        return final
+    }
 }

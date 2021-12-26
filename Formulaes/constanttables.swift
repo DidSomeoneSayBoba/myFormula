@@ -7,7 +7,7 @@
 //
 
 import Foundation
-//final names are commented
+//final names were commented
 var reset = false
 var nameofformulaes = "pleaewkotherwieyouregonnaembaras"
 var nameofhistories = "andyillbedestoyedgg"

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,9 +21,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMK-3N-iEV">
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMK-3N-iEV">
                     <rect key="frame" x="9" y="33" width="23" height="24"/>
-                    <autoresizingMask key="autoresizingMask"/>
                     <color key="backgroundColor" red="0.43658414499999998" green="0.55229433910000003" blue="0.8571589543" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="+">
                         <color key="titleColor" red="0.97832815360000003" green="0.96388928959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -182,9 +182,12 @@
                         <action selector="endEdit:" destination="-1" eventType="touchUpInside" id="nbw-YJ-0jK"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W99-wj-Vuq">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W99-wj-Vuq">
                     <rect key="frame" x="5" y="4" width="310" height="28"/>
                     <color key="backgroundColor" red="0.508936856789588" green="0.64382307098436431" blue="0.99921123798076927" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="W99-wj-Vuq" secondAttribute="height" multiplier="155:14" id="q3c-gy-gge"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.97832815360000003" green="0.96388928959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -258,6 +261,8 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="W99-wj-Vuq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="4" id="0u0-MV-qfD"/>
+                <constraint firstItem="VMK-3N-iEV" firstAttribute="top" secondItem="W99-wj-Vuq" secondAttribute="bottom" constant="1" id="Q1i-H4-XTB"/>
                 <constraint firstItem="W99-wj-Vuq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="jbX-vl-ZPO"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="W99-wj-Vuq" secondAttribute="trailing" constant="5" id="u1Z-pu-Fj0"/>
             </constraints>
