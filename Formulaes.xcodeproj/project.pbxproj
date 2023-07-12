@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		362854009628944153A457A8 /* Pods_Formulaes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD08A0B3645FC0DD72C6A60 /* Pods_Formulaes.framework */; };
 		7D026DFB20E3FF7600A7D16A /* mathKeyboard1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D026DF820E3FF6900A7D16A /* mathKeyboard1.xib */; };
 		7D026DFC20E401BB00A7D16A /* mathKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D4E15C920DB3EE8002D311D /* mathKeyboard.xib */; };
 		7D070F631F1D3FDF00EC4AED /* equationparserwithtwoindexthings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D070F621F1D3FDF00EC4AED /* equationparserwithtwoindexthings.swift */; };
@@ -26,7 +25,8 @@
 		7D64DD13218A0DCB00730D96 /* pseudoFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D64DD12218A0DCB00730D96 /* pseudoFormula.swift */; };
 		7D6F64A81F77320100A925D9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6F64A71F77320100A925D9 /* CoreData.framework */; };
 		7D6F64AB1F77322F00A925D9 /* Formulaes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F64A91F77322F00A925D9 /* Formulaes.xcdatamodeld */; };
-		7D6FEB162167CAB30079EB2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D6FEB152167CAB30079EB2A /* GoogleService-Info.plist */; };
+		7D74E4772A5F4AC200DEFB03 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 7D74E4762A5F4AC200DEFB03 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		7D74E4792A5F4AC200DEFB03 /* FirebaseMLModelDownloader in Frameworks */ = {isa = PBXBuildFile; productRef = 7D74E4782A5F4AC200DEFB03 /* FirebaseMLModelDownloader */; };
 		7D7AD06D1F361FCB00F7DC27 /* postfix calc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7AD06C1F361FCB00F7DC27 /* postfix calc.swift */; };
 		7D7C0D991F8FE82E00B9DB9D /* constanttables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C0D981F8FE82E00B9DB9D /* constanttables.swift */; };
 		7D97782F1F2835EE00143B8B /* shunting yard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D97782E1F2835EE00143B8B /* shunting yard.swift */; };
@@ -35,7 +35,7 @@
 		7DA1E8FD21876761006A2D52 /* algebra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1E8FC21876761006A2D52 /* algebra.swift */; };
 		7DC4214020E2CD3300AD3CAE /* mathKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4E15BF20DB2A4B002D311D /* mathKeyboardViewController.swift */; };
 		7DC4215820E2D17700AD3CAE /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC4215720E2D17700AD3CAE /* KeyboardViewController.swift */; };
-		7DC4215C20E2D17700AD3CAE /* formulaKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7DC4215520E2D17700AD3CAE /* formulaKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7DC4215C20E2D17700AD3CAE /* formulaKeyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7DC4215520E2D17700AD3CAE /* formulaKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7DD433131F11C7650029E94C /* FormulasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD433121F11C7650029E94C /* FormulasViewController.swift */; };
 		7DEEE84B1F09DDF100A1411B /* Formula array saver thing idk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEEE84A1F09DDF100A1411B /* Formula array saver thing idk.swift */; };
 /* End PBXBuildFile section */
@@ -51,21 +51,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7D4E15C820DB2A4B002D311D /* Embed App Extensions */ = {
+		7D4E15C820DB2A4B002D311D /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				7DC4215C20E2D17700AD3CAE /* formulaKeyboard.appex in Embed App Extensions */,
+				7DC4215C20E2D17700AD3CAE /* formulaKeyboard.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4D499088292CDB0D26268C85 /* Pods-Formulaes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Formulaes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes.release.xcconfig"; sourceTree = "<group>"; };
 		7D026DF820E3FF6900A7D16A /* mathKeyboard1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mathKeyboard1.xib; sourceTree = "<group>"; };
 		7D070F621F1D3FDF00EC4AED /* equationparserwithtwoindexthings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = equationparserwithtwoindexthings.swift; sourceTree = "<group>"; };
 		7D1BEE671F4F7F1900766B01 /* CalcTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcTableViewCell.swift; sourceTree = "<group>"; };
@@ -87,7 +86,6 @@
 		7D6A9E4F20E3FE8100010F2C /* formulaKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formulaKeyboard.swift; sourceTree = "<group>"; };
 		7D6F64A71F77320100A925D9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7D6F64AA1F77322F00A925D9 /* Formulaes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Formulaes.xcdatamodel; sourceTree = "<group>"; };
-		7D6FEB152167CAB30079EB2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7D7AD06C1F361FCB00F7DC27 /* postfix calc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "postfix calc.swift"; sourceTree = "<group>"; };
 		7D7C0D981F8FE82E00B9DB9D /* constanttables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constanttables.swift; sourceTree = "<group>"; };
 		7D97782E1F2835EE00143B8B /* shunting yard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "shunting yard.swift"; sourceTree = "<group>"; };
@@ -99,8 +97,6 @@
 		7DC4215920E2D17700AD3CAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DD433121F11C7650029E94C /* FormulasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormulasViewController.swift; sourceTree = "<group>"; };
 		7DEEE84A1F09DDF100A1411B /* Formula array saver thing idk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Formula array saver thing idk.swift"; sourceTree = "<group>"; };
-		AAD08A0B3645FC0DD72C6A60 /* Pods_Formulaes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Formulaes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0391ACF8E120686273430DF /* Pods-Formulaes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Formulaes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +105,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D6F64A81F77320100A925D9 /* CoreData.framework in Frameworks */,
-				362854009628944153A457A8 /* Pods_Formulaes.framework in Frameworks */,
+				7D74E4772A5F4AC200DEFB03 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				7D74E4792A5F4AC200DEFB03 /* FirebaseMLModelDownloader in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,15 +120,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04ACFD146CA67BF7F5921FB4 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E0391ACF8E120686273430DF /* Pods-Formulaes.debug.xcconfig */,
-				4D499088292CDB0D26268C85 /* Pods-Formulaes.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		7D254BB61EF5DF6A004DFD1C = {
 			isa = PBXGroup;
 			children = (
@@ -147,7 +135,6 @@
 				7DC4215620E2D17700AD3CAE /* formulaKeyboard */,
 				7D254BC01EF5DF6A004DFD1C /* Products */,
 				7D6F64A61F77320000A925D9 /* Frameworks */,
-				04ACFD146CA67BF7F5921FB4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,7 +158,6 @@
 				7D254BC41EF5DF6A004DFD1C /* ViewController.swift */,
 				7D7C0D981F8FE82E00B9DB9D /* constanttables.swift */,
 				7D7AD06C1F361FCB00F7DC27 /* postfix calc.swift */,
-				7D6FEB152167CAB30079EB2A /* GoogleService-Info.plist */,
 				7DD433121F11C7650029E94C /* FormulasViewController.swift */,
 				7D3615521F5E44460094692F /* FormulaTableViewCell.swift */,
 				7D1BEE691F4F822000766B01 /* thing.swift */,
@@ -190,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				7D6F64A71F77320100A925D9 /* CoreData.framework */,
-				AAD08A0B3645FC0DD72C6A60 /* Pods_Formulaes.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,13 +197,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D254BD11EF5DF6A004DFD1C /* Build configuration list for PBXNativeTarget "Formulaes" */;
 			buildPhases = (
-				E03B599D13C39C91BCD03DFA /* [CP] Check Pods Manifest.lock */,
 				7D254BBB1EF5DF6A004DFD1C /* Sources */,
 				7D254BBC1EF5DF6A004DFD1C /* Frameworks */,
 				7D254BBD1EF5DF6A004DFD1C /* Resources */,
-				7D4E15C820DB2A4B002D311D /* Embed App Extensions */,
-				B47AE8C5187A24BB86AF311A /* [CP] Embed Pods Frameworks */,
-				D8928C89CA94D4DFDEEE6EB2 /* [CP] Copy Pods Resources */,
+				7D4E15C820DB2A4B002D311D /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -226,6 +208,10 @@
 				7DC4215B20E2D17700AD3CAE /* PBXTargetDependency */,
 			);
 			name = Formulaes;
+			packageProductDependencies = (
+				7D74E4762A5F4AC200DEFB03 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				7D74E4782A5F4AC200DEFB03 /* FirebaseMLModelDownloader */,
+			);
 			productName = Formulaes;
 			productReference = 7D254BBF1EF5DF6A004DFD1C /* Formulaes.app */;
 			productType = "com.apple.product-type.application";
@@ -253,8 +239,9 @@
 		7D254BB71EF5DF6A004DFD1C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Michael Miyajima";
 				TargetAttributes = {
 					7D254BBE1EF5DF6A004DFD1C = {
@@ -280,6 +267,9 @@
 				Base,
 			);
 			mainGroup = 7D254BB61EF5DF6A004DFD1C;
+			packageReferences = (
+				7D74E4752A5F4AC200DEFB03 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 7D254BC01EF5DF6A004DFD1C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -299,7 +289,6 @@
 				7D254BCA1EF5DF6A004DFD1C /* Assets.xcassets in Resources */,
 				7D026DFB20E3FF7600A7D16A /* mathKeyboard1.xib in Resources */,
 				7D254BC81EF5DF6A004DFD1C /* Main.storyboard in Resources */,
-				7D6FEB162167CAB30079EB2A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,71 +303,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		B47AE8C5187A24BB86AF311A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D8928C89CA94D4DFDEEE6EB2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVTextDetectorResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Formulaes/Pods-Formulaes-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E03B599D13C39C91BCD03DFA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Formulaes-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7D254BBB1EF5DF6A004DFD1C /* Sources */ = {
@@ -449,6 +373,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -469,6 +394,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -493,7 +419,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -506,6 +432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -526,6 +453,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -544,25 +472,28 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		7D254BD21EF5DF6A004DFD1C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E0391ACF8E120686273430DF /* Pods-Formulaes.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3YCGAR2P8M;
 				INFOPLIST_FILE = Formulaes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tmsoftwareinc.myFormulas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -573,15 +504,17 @@
 		};
 		7D254BD31EF5DF6A004DFD1C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D499088292CDB0D26268C85 /* Pods-Formulaes.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3YCGAR2P8M;
 				INFOPLIST_FILE = Formulaes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tmsoftwareinc.myFormulas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -602,8 +535,12 @@
 				DEVELOPMENT_TEAM = 3YCGAR2P8M;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = formulaKeyboard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tmsoftwareinc.myFormulas.formulaKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -624,8 +561,12 @@
 				DEVELOPMENT_TEAM = 3YCGAR2P8M;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = formulaKeyboard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tmsoftwareinc.myFormulas.formulaKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -665,6 +606,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7D74E4752A5F4AC200DEFB03 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7D74E4762A5F4AC200DEFB03 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D74E4752A5F4AC200DEFB03 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		7D74E4782A5F4AC200DEFB03 /* FirebaseMLModelDownloader */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D74E4752A5F4AC200DEFB03 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMLModelDownloader;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7D6F64A91F77322F00A925D9 /* Formulaes.xcdatamodeld */ = {
