@@ -2,8 +2,8 @@
 //  formulaKeyboard.swift
 //  dummy
 //
-//  Created by Michael K Miyajima on 6/27/18.
-//  Copyright © 2018 Michael Miyajima. All rights reserved.
+//  Created by Aurelia Miyajima on 6/27/18.
+//  Copyright © 2018 Aurelia Miyajima. All rights reserved.
 //
 
 import UIKit

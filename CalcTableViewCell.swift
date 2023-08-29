@@ -2,8 +2,8 @@
 //  CalcTableViewCell.swift
 //  Formulaes
 //
-//  Created by Michael K Miyajima on 8/24/17.
-//  Copyright © 2017 Michael Miyajima. All rights reserved.
+//  Created by Aurelia Miyajima on 8/24/17.
+//  Copyright © 2017 Aurelia Miyajima. All rights reserved.
 //
 
 import UIKit

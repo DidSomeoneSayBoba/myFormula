@@ -1,8 +1,8 @@
 import UIKit
 import AVFoundation
-import Vision
+import MLImage
+import MLKit
 import Photos
-import FirebaseMLVision
 //import GoogleMobileVision
 class CameraViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
    
@@ -13,7 +13,9 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
    // var textDetector=GMVDetector(ofType: GMVDetectorTypeText, options: nil)
     @IBOutlet weak var testLabel: UILabel!
     @IBOutlet weak var formulaField: UITextField!
-     var textDetector: VisionTextDetector!
+    var options: CommonTextRecognizerOptions
+    let latinOptions = TextRecognizerOptions()
+    let latinTextRecognizer = TextRecognizer.textRecognizer(options:options)
     var cloudTextDetector: VisionCloudDocumentTextDetector!
 
     var session = AVCaptureSession()
@@ -25,17 +27,17 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         textDetector = vision.textDetector()
         cloudTextDetector = vision.cloudDocumentTextDetector()
         self.hideKeyboardWhenTappedAround()
-        NotificationCenter.default.addObserver(self, selector: #selector(CameraViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(CameraViewController.keyboardWillShow), name: NSNotification.Name.UIResponder.keyboardWillShowNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(CameraViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(CameraViewController.keyboardWillHide), name: NSNotification.Name.UIResponder.keyboardWillHideNotification, object: nil)
     }
     func adjustingHeight(show:Bool, notification:NSNotification) {
         // 1
         var userInfo = notification.userInfo!
         // 2
-        let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        let keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
         // 3
-        let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+        let animationDurarion = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
         // 4
         let changeInHeight = (keyboardFrame.height+20)*(show ? -1 : 1)
         //5
