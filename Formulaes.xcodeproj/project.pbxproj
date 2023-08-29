@@ -28,7 +28,6 @@
 		7D6F64AB1F77322F00A925D9 /* Formulaes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F64A91F77322F00A925D9 /* Formulaes.xcdatamodeld */; };
 		7D7AD06D1F361FCB00F7DC27 /* postfix calc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7AD06C1F361FCB00F7DC27 /* postfix calc.swift */; };
 		7D7C0D991F8FE82E00B9DB9D /* constanttables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C0D981F8FE82E00B9DB9D /* constanttables.swift */; };
-		7D97782F1F2835EE00143B8B /* shunting yard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D97782E1F2835EE00143B8B /* shunting yard.swift */; };
 		7D9E66A01F2C2E3F0090DCFE /* sources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E669F1F2C2E3F0090DCFE /* sources.swift */; };
 		7D9E66A21F2C2E880090DCFE /* stuff1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E66A11F2C2E880090DCFE /* stuff1.swift */; };
 		7DA1E8FD21876761006A2D52 /* algebra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1E8FC21876761006A2D52 /* algebra.swift */; };
@@ -89,7 +88,6 @@
 		7D6F64AA1F77322F00A925D9 /* Formulaes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Formulaes.xcdatamodel; sourceTree = "<group>"; };
 		7D7AD06C1F361FCB00F7DC27 /* postfix calc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "postfix calc.swift"; sourceTree = "<group>"; };
 		7D7C0D981F8FE82E00B9DB9D /* constanttables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constanttables.swift; sourceTree = "<group>"; };
-		7D97782E1F2835EE00143B8B /* shunting yard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "shunting yard.swift"; sourceTree = "<group>"; };
 		7D9E669F1F2C2E3F0090DCFE /* sources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sources.swift; sourceTree = "<group>"; };
 		7D9E66A11F2C2E880090DCFE /* stuff1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stuff1.swift; sourceTree = "<group>"; };
 		7DA1E8FC21876761006A2D52 /* algebra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = algebra.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 				7D254BCE1EF5DF6A004DFD1C /* Info.plist */,
 				7D9E669F1F2C2E3F0090DCFE /* sources.swift */,
 				7D9E66A11F2C2E880090DCFE /* stuff1.swift */,
-				7D97782E1F2835EE00143B8B /* shunting yard.swift */,
 			);
 			path = Formulaes;
 			sourceTree = "<group>";
@@ -199,7 +196,6 @@
 				E83C114744DF3BF887A9CABA /* Pods-Formulaes.debug.xcconfig */,
 				33F5775987A8E6D19A137163 /* Pods-Formulaes.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -394,7 +390,6 @@
 				7D9E66A01F2C2E3F0090DCFE /* sources.swift in Sources */,
 				7D6F64AB1F77322F00A925D9 /* Formulaes.xcdatamodeld in Sources */,
 				7DA1E8FD21876761006A2D52 /* algebra.swift in Sources */,
-				7D97782F1F2835EE00143B8B /* shunting yard.swift in Sources */,
 				7D254BC51EF5DF6A004DFD1C /* ViewController.swift in Sources */,
 				7DEEE84B1F09DDF100A1411B /* Formula array saver thing idk.swift in Sources */,
 				7D4C545720901685003AF802 /* Preview.swift in Sources */,
@@ -499,7 +494,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -552,7 +547,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -570,7 +565,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3YCGAR2P8M;
 				INFOPLIST_FILE = Formulaes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -592,7 +587,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3YCGAR2P8M;
 				INFOPLIST_FILE = Formulaes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -617,7 +612,7 @@
 				DEVELOPMENT_TEAM = 3YCGAR2P8M;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = formulaKeyboard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -643,7 +638,7 @@
 				DEVELOPMENT_TEAM = 3YCGAR2P8M;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = formulaKeyboard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

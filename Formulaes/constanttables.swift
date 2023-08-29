@@ -12,7 +12,7 @@ var reset = false
 var nameofformulaes = "pleaewkotherwieyouregonnaembaras"
 var nameofhistories = "andyillbedestoyedgg"
 var dolfortrig = true
-func matomta(_ equation:String)->String{
+func matomta(_ equation:String)->String{//what does this even mean
     var final = ""
     var lettersinarow = false
     var afterdigit = false

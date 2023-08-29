@@ -7,74 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "391E8DDE-7EEB-4E00-80AB-645A5EAC2017"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CameraViewController.swift"
-            timestampString = "555387365.471236"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "textdetthing(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "391E8DDE-7EEB-4E00-80AB-645A5EAC2017 - f7408ae2014ca634"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Formulaes.CameraViewController.textdetthing(__ObjC.UIImage) -&gt; ()"
-                  moduleName = "Formulaes"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MKM/Documents/Formulaestrigupdateswift%202/CameraViewController.swift"
-                  timestampString = "547401211.267282"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "1732">
-               </Location>
-               <Location
-                  uuid = "391E8DDE-7EEB-4E00-80AB-645A5EAC2017 - f7408ae2014ca634"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Formulaes.CameraViewController.textdetthing(__ObjC.UIImage) -&gt; ()"
-                  moduleName = "Formulaes"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MKM/Documents/Formulaestrigupdateswift%202/CameraViewController.swift"
-                  timestampString = "547401211.270849"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "1748">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "32429211-A1D5-4F68-A54C-4838F5B9BB58"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CameraViewController.swift"
-            timestampString = "555387365.471517"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2"
-            endingLineNumber = "2"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "B9AF1AB4-B285-42A0-AE9B-6E0755775D16"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -153,6 +85,22 @@
                   offsetFromSymbolStart = "540">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AF21A61C-EF5D-4411-A31A-A91B83FD68F2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Formulaes/equationparserwithtwoindexthings.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "run2(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

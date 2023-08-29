@@ -11,7 +11,7 @@ func postfixcalc(_ formula:String)->Double{
     var final = 0.0
     var tempnum = 0.0
     var opers:[String] = ["+","-","/","*"]
-    var formulachars = formula.characters
+    var formulachars = Array(formula)
     var digits = ["0","1","2","3","4","5","6","7","8","9"]
     var ignorefirst = false
     var chararray:[String] = []
@@ -75,7 +75,7 @@ func postfixEvaluate(equation1: String) -> Double {
    print("equation is \(equation)")
     var result = 0.0
     var stack = Stack<Double>()
-    for item in equation.characters {
+    for item in Array(equation) {
         if item == " " || item == "+" || item == "-" || item == "/" || item == "*" || item == "^" || item == "@" || item == "$" || item == "%" || item == "?" || item == "√"{
         if tempstr != ""{
             if tempstr.contains("."){

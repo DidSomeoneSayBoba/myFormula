@@ -28,7 +28,7 @@ class FormulaTableViewCell: UITableViewCell {
         
     }
     func inputswithcommas(_ a:String) -> String{
-        var list = a.characters
+        var list = Array(a)
         var final = ""
         var index = 0
         for char in list{

@@ -25,8 +25,8 @@ func StringtoFormula(Formula:String,formulaname:String) ->Formulae{
     var greekCount = 0
     //finalString has variables replaced with japanese letters with numbers for lolsははははは
     var beforeequal = true
-    var finalString = Array(charsinformula.characters)
-    var finalString1 = Array(charsinformula.characters)
+    var finalString = Array(charsinformula)
+    var finalString1 = Array(charsinformula)
     var indexforabovestring = 0
     for uni in charsinformula.unicodeScalars {
         if(beforeequal == true){
@@ -92,8 +92,8 @@ func StringtopseudoFormula(Formula:String,formulaname:String) ->pseudoFormula{
     var greekCount = 0
     //finalString has variables replaced with japanese letters with numbers for lolsははははは
     var beforeequal = true
-    var finalString = Array(charsinformula.characters)
-    var finalString1 = Array(charsinformula.characters)
+    var finalString = Array(charsinformula)
+    var finalString1 = Array(charsinformula)
     var indexforabovestring = 0
     for uni in charsinformula.unicodeScalars {
         if(beforeequal == true){

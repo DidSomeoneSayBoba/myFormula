@@ -3,6 +3,7 @@ import AVFoundation
 import MLImage
 import MLKit
 import Photos
+import Vision
 //import GoogleMobileVision
 class CameraViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
    
@@ -13,23 +14,18 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
    // var textDetector=GMVDetector(ofType: GMVDetectorTypeText, options: nil)
     @IBOutlet weak var testLabel: UILabel!
     @IBOutlet weak var formulaField: UITextField!
-    var options: CommonTextRecognizerOptions
-    let latinOptions = TextRecognizerOptions()
-    let latinTextRecognizer = TextRecognizer.textRecognizer(options:options)
-    var cloudTextDetector: VisionCloudDocumentTextDetector!
+    var textRequest: VNRecognizeTextRequest!
 
     var session = AVCaptureSession()
    // var requests = [VNRequest]()
     override func viewDidLoad() {
         super.viewDidLoad()
-       startLiveVideo()
-        let vision = Vision.vision()
-        textDetector = vision.textDetector()
-        cloudTextDetector = vision.cloudDocumentTextDetector()
+        textRequest = VNRecognizeTextRequest(completionHandler: self.handleDetectedText)
+        textRequest.recognitionLevel = .accurate
         self.hideKeyboardWhenTappedAround()
-        NotificationCenter.default.addObserver(self, selector: #selector(CameraViewController.keyboardWillShow), name: NSNotification.Name.UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(CameraViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(CameraViewController.keyboardWillHide), name: NSNotification.Name.UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(CameraViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     func adjustingHeight(show:Bool, notification:NSNotification) {
         // 1
@@ -50,16 +46,28 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     func keyboardWillHide(notification:NSNotification) {
         adjustingHeight(show: false, notification: notification)
     }
-    func runCloudTextRecognition(with image: UIImage) {
-        let visionImage = VisionImage(image: image)
-        cloudTextDetector.detect(in: visionImage) { features, error in
-            if let error = error {
-                print("Received error: \(error)")
-                return
-            }
-            
-            self.processCloudResult(from: features, error: error)
+    func handleDetectedText(request: VNRequest?, error: Error?) {
+        if let error = error {
+            print("Error: \(error)")
+            return
         }
+        
+        guard let results = request?.results, let textResults = results as? [VNRecognizedTextObservation] else {
+            return
+        }
+        
+        var detectedText = ""
+        for textObservation in textResults {
+            guard let topCandidate = textObservation.topCandidates(1).first else {
+                continue
+            }
+            detectedText += topCandidate.string
+        }
+        
+        DispatchQueue.main.async {
+            self.formulaField.text = self.converttomyformat(detectedText)
+        }
+    }
     }
     func processCloudResult(from text: VisionCloudText?, error: Error?) {
         
@@ -143,17 +151,23 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
             }
         })
     }
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        imageView.image = image
-        dismiss(animated:true, completion: nil)
-        let thing = imageView.image
-        if thing != nil{
-            runCloudTextRecognition(with: thing!)
-            
-            
-        }
+func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    let image = info[.originalImage] as! UIImage
+    imageView.image = image
+    dismiss(animated: true, completion: nil)
+    
+    guard let cgImage = image.cgImage else {
+        return
     }
+    
+    let requestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+    
+    do {
+        try requestHandler.perform([self.textRequest])
+    } catch {
+        print("Failed to perform text request: \(error)")
+    }
+}
    @IBAction func take(_ sender: Any) {
         print("photo lol")
     if UIImagePickerController.isSourceTypeAvailable(.camera) {

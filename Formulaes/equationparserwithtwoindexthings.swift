@@ -24,7 +24,7 @@ class Formulae: NSObject, NSCoding{
         var operators:[String] = []
         var numbers:[Double] = []
         var entireformula:[String] = []
-        var formula = Array(self.formula.characters)
+        var formula = Array(self.formula)
         var forformula = formula
         var index = 0
         var iss = false
@@ -77,7 +77,7 @@ class Formulae: NSObject, NSCoding{
         var operators:[String] = []
         var numbers:[Double] = []
         var entireformula:[String] = []
-        var formula = Array(self.formula.characters)
+        var formula = Array(self.formula)
         var forformula = formula
         var index = 0
         var iss = false
@@ -136,7 +136,7 @@ class Formulae: NSObject, NSCoding{
         var operators:[String] = []
         var numbers:[Double] = []
         var entireformula:[String] = []
-        var formula = Array(self.formula.characters)
+        var formula = Array(self.formula)
         var forformula = formula
         var index = 0
         var iss = false
@@ -147,32 +147,6 @@ class Formulae: NSObject, NSCoding{
         for char in formula {
             if String(char) == "い"{
                 final += String(inputs[inputindex])
-                /*
-                 if String(inputs[inputindex]).characters.count>1{
-                 var index1 = 0
-                 var numberstring = ""
-                 var charray:[Character] = []
-                 for char in String(inputs[inputindex]).characters{
-                 numberstring += String(char)
-                 charray.append(char)
-                 /*}
-                 var index2 = 0
-                 for char1 in charray{
-                 
-                 if index2 == 0{
-                 forformula[index] = char1
-                 }
-                 else{
-                 forformula.insert(char1,at:index)
-                 print("i think i screwed up, cuz infix is \(formula) but postfix is \(forformula)")
-                 index+=1
-                 }
-                 index2+=1
-                 
-                 }
-                 index1 = 0*/
-                 
-                 }*/
                 inputindex += 1
             }
             else{
@@ -190,7 +164,7 @@ class Formulae: NSObject, NSCoding{
     func run(_ inputs:[Int]) -> Int{
         var result:Int = 0
         let digits = CharacterSet.decimalDigits
-        var finalString = Array(formula.characters)
+        var finalString = Array(formula)
         var index = 0
         var indexofinputs = 0
         var temp = 0
@@ -325,7 +299,7 @@ class Formulae: NSObject, NSCoding{
         var operators:[String] = []
         var numbers:[Double] = []
         var entireformula:[String] = []
-        var formula = Array(self.formula.characters)
+        var formula = Array(self.formula)
         var forformula = formula
         var index = 0
         var iss = false

@@ -34,20 +34,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         var userInfo = notification.userInfo!
         // 2
-        let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        let keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
         // 3
-        let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+        let animationDurarion = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
         // 4
         let changeInHeight = (keyboardFrame.height+30)*(show ? -1 : 1)
         //5
         heightThing.constant = heightThing.constant - changeInHeight
         
     }
-    func keyboardWillShow(notification:NSNotification) {
+    @objc func keyboardWillShow(notification:NSNotification) {
         adjustingHeight(show: true, notification: notification)
     }
     
-    func keyboardWillHide(notification:NSNotification) {
+    @objc func keyboardWillHide(notification:NSNotification) {
         adjustingHeight(show: false, notification: notification)
     }
     override func viewDidLoad() {
@@ -61,9 +61,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         print(matomta("abc=f"))
         print("")
         self.hideKeyboardWhenTappedAround()
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
  calchistorytableview.layer.borderWidth=2.0
         if reset == true{
         if let bundleID = Bundle.main.bundleIdentifier {
@@ -140,7 +140,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.resultarray = []
         userDefaults.synchronize()*/
         var thing1 = false
-        for char in (calculatehere.text?.characters)!{
+        for char in (calculatehere.text)!{
             if String(char) == "="{
                 thing1 = true
             }
