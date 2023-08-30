@@ -223,9 +223,9 @@ var Formulaarray:[Formulae] = []
         // 1
         var userInfo = notification.userInfo!
         // 2
-        let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        let keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
         // 3
-        let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+        let animationDurarion = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
         // 4
         let changeInHeight = (keyboardFrame.width+20)*(show ? -1 : 1)
         //5

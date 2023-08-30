@@ -6,9 +6,6 @@
 //  Copyright © 2017 Aurelia Miyajima. All rights reserved.
 //
 
-import Foundation
-
-
 public struct Stack<T> {
     fileprivate var array = [T]()
     
@@ -39,9 +36,9 @@ public struct Stack<T> {
 
 extension Stack: Sequence {
     public func makeIterator() -> AnyIterator<T> {
-        var curr = self
-        return AnyIterator { _ -> T? in
-            return curr.pop()
-        }
+            var curr = self
+            return AnyIterator {
+                return curr.pop()
+            }
     }
 }

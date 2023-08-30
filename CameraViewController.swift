@@ -39,11 +39,11 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         //5
         heightThing.constant -= changeInHeight
     }
-    func keyboardWillShow(notification:NSNotification) {
+    @objc func keyboardWillShow(notification:NSNotification) {
         adjustingHeight(show: true, notification: notification)
     }
     
-    func keyboardWillHide(notification:NSNotification) {
+    @objc func keyboardWillHide(notification:NSNotification) {
         adjustingHeight(show: false, notification: notification)
     }
     func handleDetectedText(request: VNRequest?, error: Error?) {
@@ -68,31 +68,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
             self.formulaField.text = self.converttomyformat(detectedText)
         }
     }
-    }
-    func processCloudResult(from text: VisionCloudText?, error: Error?) {
-        
-        guard let features = text, let image = imageView.image, let pages = features.pages else {
-            return
-        }
-        var finalword = ""
-        for page in pages {
-            for block in page.blocks ?? []  {
-                for paragraph in block.paragraphs ?? [] {
-                    for word in paragraph.words ?? [] {
-                        var wordText = ""
-                        for symbol in word.symbols ?? [] {
-                            if let text = symbol.text {
-                                wordText = wordText + text
-                                finalword += text
-                            }
-                        }
-                       
-                    }
-                }
-            }
-        }
-        self.formulaField.text = converttomyformat(finalword)
-    }
+    
     func converttomyformat(_ equation:String)->String{
         let array = Array(equation)
         var final = ""
@@ -167,7 +143,7 @@ func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMe
     } catch {
         print("Failed to perform text request: \(error)")
     }
-}
+    }
    @IBAction func take(_ sender: Any) {
         print("photo lol")
     if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -195,25 +171,6 @@ func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMe
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
-    }
-    func startLiveVideo() {
-     /*   //1
-        session.sessionPreset = AVCaptureSessionPresetPhoto
-        let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
-        
-        //2
-        let deviceInput = try! AVCaptureDeviceInput(device: captureDevice!)
-        let deviceOutput = AVCaptureVideoDataOutput()
-        deviceOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)]
-        deviceOutput.setSampleBufferDelegate(self as! AVCaptureVideoDataOutputSampleBufferDelegate, queue: DispatchQueue.global(qos: DispatchQoS.QoSClass.default))
-        session.addInput(deviceInput)
-        session.addOutput(deviceOutput)
-        let imageLayer = AVCaptureVideoPreviewLayer(session: session)
-        imageLayer?.frame = imageView.bounds
-        imageView?.layer.addSublayer(imageLayer!)
-        
-        session.startRunning()
-       */
     }
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
