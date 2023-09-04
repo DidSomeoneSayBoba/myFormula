@@ -1,7 +1,5 @@
 import UIKit
 import AVFoundation
-import MLImage
-import MLKit
 import Photos
 import Vision
 //import GoogleMobileVision

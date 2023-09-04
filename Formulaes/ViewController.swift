@@ -8,6 +8,7 @@
 
 import UIKit
 import QuartzCore
+import SQLite3
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var heightThing: NSLayoutConstraint!
     @IBOutlet weak var namePicker: UIPickerView!
@@ -473,6 +474,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return thin
         
     }
+
     func replaceSymbs(_ symbstring:String)->String{
         var final = ""
         let array = Array(symbstring)
