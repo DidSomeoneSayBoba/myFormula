@@ -53,8 +53,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        var lolall = specVar(StringtopseudoFormula(Formula:matomta("abc=f"),formulaname:"test3"),3)
-         var lolall1 = specVar(StringtopseudoFormula(Formula:matomta("abc=f"),formulaname:"test4"),2)
+        let lolall = specVar(StringtopseudoFormula(Formula:matomta("abc=f"),formulaname:"test3"),3)
+        let lolall1 = specVar(StringtopseudoFormula(Formula:matomta("abc=f"),formulaname:"test4"),2)
         print("lol hi "+lolall);
         print("also whichSide thing\(whichSide(lolall1))");
         print("lol hi 2 "+lolall1)
@@ -72,7 +72,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }}
         egformula.text = convertEquation(Formulaarray[0].toEquation1())
         var userDefaults = UserDefaults.standard
-      
+        
+        
+        //execute db stuff here
+        let db = openDatabase()
+        // 1
+        var createTableStatement: OpaquePointer?
+        // 2
+        if sqlite3_prepare_v2(db, createTableString, -1, &createTableStatement, nil) ==
+            SQLITE_OK {
+          // 3
+          if sqlite3_step(createTableStatement) == SQLITE_DONE {
+            print("\nContact table created.")
+          } else {
+            print("\nContact table is not created.")
+          }
+        } else {
+          print("\nCREATE TABLE statement is not prepared.")
+        }
+        // 4
+        sqlite3_finalize(createTableStatement)
+        
         if let data = userDefaults.object(forKey: nameofformulaes) {
             Formulaarray = NSKeyedUnarchiver.unarchiveObject(with: data as! Data) as! [Formulae]
             print("FOrmulas: \(Formulaarray)")
@@ -385,6 +405,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return Formulaarray[row].name
+    }
+    func openDatabase() -> OpaquePointer? {
+      var db: OpaquePointer?
+      if sqlite3_open(dbpath, &db) == SQLITE_OK {
+        print("Successfully opened connection to database at \(dbpath)")
+        return db
+      } else {
+        print("Unable to open database.")
+        fatalError()
+      }
+    }
+    //create, retrieve from db
+    func retrieve(){
+        
     }
     func replaceAliases(_ equation:String)->String{
         var tempcharacter = ""

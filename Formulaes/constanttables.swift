@@ -9,9 +9,29 @@
 import Foundation
 //final names were commented
 var reset = false
-var nameofformulaes = "pleaewkotherwieyouregonnaembaras"
-var nameofhistories = "andyillbedestoyedgg"
+let nameofformulaes = "pleaewkotherwieyouregonnaembaras"
+let nameofhistories = "andyillbedestoyedgg"
 var dolfortrig = true
+let dbpath = "./myformula.db"
+
+let createTableString = """
+CREATE TABLE "myformula" (
+    "id"    INTEGER NOT NULL,
+    "name"    TEXT NOT NULL,
+    "formula"    TEXT,
+    "input"    TEXT,
+    "output"    TEXT,
+    PRIMARY KEY("id" AUTOINCREMENT)
+)
+
+CREATE TABLE "history" (
+    "id"    INTEGER NOT NULL,
+    "myformula_id"    INTEGER NOT NULL,
+    "equation"    TEXT,
+    "date"    TEXT,
+    PRIMARY KEY("id" AUTOINCREMENT)
+)
+"""
 func matomta(_ equation:String)->String{//what does this even mean
     var final = ""
     var lettersinarow = false
