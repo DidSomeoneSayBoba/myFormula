@@ -9,6 +9,7 @@
 import UIKit
 import QuartzCore
 import SQLite3
+import SQLite
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var heightThing: NSLayoutConstraint!
     @IBOutlet weak var namePicker: UIPickerView!
@@ -17,11 +18,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var dateindex = 0
     var formulanames:[String] = []
     var resultarray:[history] = []
-    
+    var db:Connection!
     @IBOutlet weak var calchistorytableview: UITableView!
     @IBOutlet weak var calculatehere: UITextField!
     @IBOutlet weak var calcorformula: UISegmentedControl!
-
+    
     @IBOutlet weak var calcbutton: UIButton!
     
     @IBOutlet weak var egformula: UILabel!
@@ -44,6 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         heightThing.constant = heightThing.constant - changeInHeight
         
     }
+    
     @objc func keyboardWillShow(notification:NSNotification) {
         adjustingHeight(show: true, notification: notification)
     }
@@ -65,30 +67,32 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
- calchistorytableview.layer.borderWidth=2.0
+        calchistorytableview.layer.borderWidth=2.0
         if reset == true{
-        if let bundleID = Bundle.main.bundleIdentifier {
-            UserDefaults.standard.removePersistentDomain(forName: bundleID)
-        }}
+            if let bundleID = Bundle.main.bundleIdentifier {
+                UserDefaults.standard.removePersistentDomain(forName: bundleID)
+            }}
         egformula.text = convertEquation(Formulaarray[0].toEquation1())
         var userDefaults = UserDefaults.standard
         
         
         //execute db stuff here
-        let db = openDatabase()
+        do {
+            db = try Connection("path_to_your.db")
+            db = openDatabase()
         // 1
         var createTableStatement: OpaquePointer?
         // 2
         if sqlite3_prepare_v2(db, createTableString, -1, &createTableStatement, nil) ==
             SQLITE_OK {
-          // 3
-          if sqlite3_step(createTableStatement) == SQLITE_DONE {
-            print("\nContact table created.")
-          } else {
-            print("\nContact table is not created.")
-          }
+            // 3
+            if sqlite3_step(createTableStatement) == SQLITE_DONE {
+                print("\nContact table created.")
+            } else {
+                print("\nContact table is not created.")
+            }
         } else {
-          print("\nCREATE TABLE statement is not prepared.")
+            print("\nCREATE TABLE statement is not prepared.")
         }
         // 4
         sqlite3_finalize(createTableStatement)
@@ -110,29 +114,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         print("formulaarray is \(Formulaarray)")
         print("historyarray is \(resultarray)")
         // Do any additional setup after loading the view, typically from a nib.
-     /*
-        var testformula = StringtoFormula(Formula:testmultipleinputs,formulaname:"woah")
-        print(Formulaarray)
-        var testintarray = [40,1,2,3]
-        var thing = testformula.run2(testintarray)
-        var test = StringtoFormula(Formula:parntest,formulaname:"memes")
-        var test2 = StringtoFormula(Formula:parntest1,formulaname:"LOL")
-        
-        print(test.run2(testintarray))
-       postfixcalc(test2.run2(testintarray))
-        var thin = postfixEvaluate(equation1: test2.run2(testintarray))
-        
-       */
+        /*
+         var testformula = StringtoFormula(Formula:testmultipleinputs,formulaname:"woah")
+         print(Formulaarray)
+         var testintarray = [40,1,2,3]
+         var thing = testformula.run2(testintarray)
+         var test = StringtoFormula(Formula:parntest,formulaname:"memes")
+         var test2 = StringtoFormula(Formula:parntest1,formulaname:"LOL")
+         
+         print(test.run2(testintarray))
+         postfixcalc(test2.run2(testintarray))
+         var thin = postfixEvaluate(equation1: test2.run2(testintarray))
+         
+         */
         
         OperationQueue.main.addOperation({
-            
             self.calchistorytableview.delegate = self
             self.calchistorytableview.dataSource = self
-            
-            
             self.calchistorytableview.reloadData()
-            
-            
         })
         
         let data = NSKeyedArchiver.archivedData(withRootObject: self.Formulaarray)
@@ -140,7 +139,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         print("set data for key \(nameofformulaes)")
         namePicker.delegate = self
         namePicker.dataSource = self
-
+        
         userDefaults.synchronize()
         
         self.formulanames = []
@@ -152,126 +151,180 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let string = Array(signString)
         let signs = ["?","$","@"]
     }
+    func retrieve(_ table: String){
+        let query = "SELECT * FROM "+table+";"
+        var queryStatement: OpaquePointer?
+        if sqlite3_prepare_v2(
+            db,
+            query,
+            -1,
+            &queryStatement,
+            nil
+        ) == SQLITE_OK {
+            print("\n")
+            while (sqlite3_step(queryStatement) == SQLITE_ROW) {
+                let id = sqlite3_column_int(queryStatement, 0)
+                guard let queryResultCol1 = sqlite3_column_text(queryStatement, 1) else {
+                    print("Query result is nil.")
+                    return
+                }
+                let name = String(cString: queryResultCol1)
+                print("Query Result:")
+                print("\(id) | \(name)")
+            }
+        } else {
+            let errorMessage = String(cString: sqlite3_errmsg(db))
+            print("\nQuery is not prepared \(errorMessage)")
+        }
+        sqlite3_finalize(queryStatement)
+    }
+    // insert row into table
+    func inserthist(_ hist: history, _ table: String){
+        let insertStatementString = "INSERT INTO history (id, myformula_id, equation,date) VALUES (?, ?, ?, ?);"
+        var insertStatement: OpaquePointer?
+        // 1
+        if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) ==
+            SQLITE_OK {
+            let eq: NSString = hist.equation as NSString
+            let date: NSString = hist.date as NSString
+            // 2
+            //sqlite3_bind_int(insertStatement, 1, id)
+            // 3
+            sqlite3_bind_text(insertStatement, 3, eq.utf8String, -1, nil)
+            sqlite3_bind_text(insertStatement, 4, date.utf8String, -1, nil)
+            // 4
+            if sqlite3_step(insertStatement) == SQLITE_DONE {
+                print("\nSuccessfully inserted row.")
+            } else {
+                print("\nCould not insert row.")
+            }
+        } else {
+            print("\nINSERT statement is not prepared.")
+        }
+        // 5
+        sqlite3_finalize(insertStatement)
+    }
     
     //abc=f
     @IBAction func calculate(_ sender: Any) {
-   /*var userDefaults = UserDefaults.standard
-        userDefaults.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-        self.Formulaarray = []
-        self.resultarray = []
-        userDefaults.synchronize()*/
+        /*var userDefaults = UserDefaults.standard
+         userDefaults.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+         self.Formulaarray = []
+         self.resultarray = []
+         userDefaults.synchronize()*/
         var thing1 = false
         for char in (calculatehere.text)!{
             if String(char) == "="{
                 thing1 = true
             }
         }
-
+        
         var selected = namePicker.selectedRow(inComponent: 0)
         var usingformula = Formulaarray[selected]
-       
-    if calculatehere.text == ""{
-         print(usingformula.inputs)
-        calcbutton.isEnabled = false
-        calculatehere.text = "hey"
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
-            
-            // Put your code which should be executed with a delay here
-            self.calculatehere.text = "did"
+        
+        if calculatehere.text == ""{
+            print(usingformula.inputs)
+            calcbutton.isEnabled = false
+            calculatehere.text = "hey"
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
-            self.calculatehere.text = "you"
+                
+                // Put your code which should be executed with a delay here
+                self.calculatehere.text = "did"
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
-                self.calculatehere.text = "just"
+                    self.calculatehere.text = "you"
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
-                self.calculatehere.text = "PRESS"
+                        self.calculatehere.text = "just"
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
-                            self.calculatehere.text = "caLCUlate"
+                            self.calculatehere.text = "PRESS"
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
-                                self.calculatehere.text = "withOUt"
-                                self.calculatehere.textColor=UIColor.brown
+                                self.calculatehere.text = "caLCUlate"
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
-                                    self.calculatehere.text = "InPuTs?"
-                                    self.calculatehere.textColor=UIColor.blue
-                                    
+                                    self.calculatehere.text = "withOUt"
+                                    self.calculatehere.textColor=UIColor.brown
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
-                                        self.calculatehere.text = "SERIOUSLY?!?!?!?!?!"
-                                     self.calculatehere.textColor=UIColor.cyan
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-                                            
-                              
-                                            
-                                            self.calculatehere.textColor=UIColor.blue
+                                        self.calculatehere.text = "InPuTs?"
+                                        self.calculatehere.textColor=UIColor.blue
+                                        
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+                                            self.calculatehere.text = "SERIOUSLY?!?!?!?!?!"
+                                            self.calculatehere.textColor=UIColor.cyan
                                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                                                 
-                                                self.calculatehere.textColor=UIColor.cyan
+                                                
+                                                
+                                                self.calculatehere.textColor=UIColor.blue
                                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-                                             self.calculatehere.textColor = UIColor.blue
                                                     
+                                                    self.calculatehere.textColor=UIColor.cyan
                                                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-                                            self.calculatehere.text = ""
-                                                        self.calculatehere.textColor=UIColor.black})})})})
-})
-})
-})
-})
-
-                        
+                                                        self.calculatehere.textColor = UIColor.blue
+                                                        
+                                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                                                            self.calculatehere.text = ""
+                                                            self.calculatehere.textColor=UIColor.black})})})})
+                                        })
+                                    })
+                                })
+                            })
+                            
+                            
+                        })
                     })
                 })
+                
             })
             
-        })
-        
-        calcbutton.isEnabled = true
-        
-    }
-            else if thing1 == true{
-        calculatehere.text = "no support for direct equations yet"
-    }
-    else{
-        calcbutton.isEnabled = false
-        let things2 = stringwithoutcommas1(calculatehere.text!)
-        let thing = stringwithoutcommas(calculatehere.text!)
-        
-        
-        print(thing)
-        let formula = Formulaarray[namePicker.selectedRow(inComponent: 0)]
-        if thing.count > formula.inputs.count{
-            calculatehere.text = "Error:too many inputs"
+            calcbutton.isEnabled = true
+            
         }
-        else if thing.count < formula.inputs.count{
-            calculatehere.text = "Error:not enough inputs"
+        else if thing1 == true{
+            calculatehere.text = "no support for direct equations yet"
         }
         else{
-        let wow = replaceAliases(formula.equationMeme(things2))
-        let postfixformula = formula.run2(thing)
-        print("postfixformula is \(postfixformula)")
-        print("postfixEvaluate(equation1: postfixformula) is \(postfixEvaluate(equation1: postfixformula))")
-        let date1 = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        let date = formatter.string(from:date1)
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date1)
-        let minutes = calendar.component(.minute, from: date1)
-        let whole = "\(date),\(hour):\(minutes)"
-        print("wow wow is \(wow)")
-        let result = "\(wow)"+String(Double(round(postfixEvaluate(equation1: postfixformula)*10000))/10000)
-        let formulaname = Formulaarray[namePicker.selectedRow(inComponent:0)].name
-        let historything = history(Formulaname:formulaname, equation:/*replaceAliases(convertEquation(result))*/result, date:whole)
-        resultarray.append(historything)
-        //works?
-        calchistorytableview.reloadData()
-        
-        calculatehere.text = ""
-        var userDefaults = UserDefaults.standard
-        let data = NSKeyedArchiver.archivedData(withRootObject: self.resultarray)
-        userDefaults.set(data, forKey: nameofhistories)
-        print("set data for key \(nameofhistories)")
-        
-        userDefaults.synchronize()
-        }
-        calcbutton.isEnabled = true
+            calcbutton.isEnabled = false
+            let things2 = stringwithoutcommas1(calculatehere.text!)
+            let thing = stringwithoutcommas(calculatehere.text!)
+            
+            
+            print(thing)
+            let formula = Formulaarray[namePicker.selectedRow(inComponent: 0)]
+            if thing.count > formula.inputs.count{
+                calculatehere.text = "Error:too many inputs"
+            }
+            else if thing.count < formula.inputs.count{
+                calculatehere.text = "Error:not enough inputs"
+            }
+            else{
+                let wow = replaceAliases(formula.equationMeme(things2))
+                let postfixformula = formula.run2(thing)
+                print("postfixformula is \(postfixformula)")
+                print("postfixEvaluate(equation1: postfixformula) is \(postfixEvaluate(equation1: postfixformula))")
+                let date1 = Date()
+                let formatter = DateFormatter()
+                formatter.dateFormat = "dd/MM/yyyy"
+                let date = formatter.string(from:date1)
+                let calendar = Calendar.current
+                let hour = calendar.component(.hour, from: date1)
+                let minutes = calendar.component(.minute, from: date1)
+                let whole = "\(date),\(hour):\(minutes)"
+                print("wow wow is \(wow)")
+                let result = "\(wow)"+String(Double(round(postfixEvaluate(equation1: postfixformula)*10000))/10000)
+                let formulaname = Formulaarray[namePicker.selectedRow(inComponent:0)].name
+                let historything = history(Formulaname:formulaname, equation:/*replaceAliases(convertEquation(result))*/result, date:whole)
+                //perform db update here
+                resultarray.append(historything)
+                //works?
+                calchistorytableview.reloadData()
+                
+                calculatehere.text = ""
+                var userDefaults = UserDefaults.standard
+                let data = NSKeyedArchiver.archivedData(withRootObject: self.resultarray)
+                userDefaults.set(data, forKey: nameofhistories)
+                print("set data for key \(nameofhistories)")
+                
+                userDefaults.synchronize()
+            }
+            calcbutton.isEnabled = true
         }
     }
     func stringwithoutcommas(_ a:String)->[Double]{
@@ -293,22 +346,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         for char in list {
             print("char is ")
             if char != "+" && char != "-" && char != "=" && char != "/" && char != "*" && char != "^"  {
-            if char == " "{
-                print("found space at index \(index)")
-                if(tempstring != ""){
-                    stirng.append(Double(tempstring)!)
-                    tempstring = ""
+                if char == " "{
+                    print("found space at index \(index)")
+                    if(tempstring != ""){
+                        stirng.append(Double(tempstring)!)
+                        tempstring = ""
+                    }
                 }
-        }
-            else{
-                tempstring += char
-                
-                if index == list.count-1{
-                    stirng.append(Double(tempstring)!)
+                else{
+                    tempstring += char
+                    
+                    if index == list.count-1{
+                        stirng.append(Double(tempstring)!)
+                    }
+                    
                 }
-            
-        }
-        index += 1
+                index += 1
             }
         }
         return stirng
@@ -358,20 +411,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             [weak self] in
             var userDefaults = UserDefaults.standard
             if (self?.resultarray.isEmpty)! != true {
-            
-            let data = NSKeyedArchiver.archivedData(withRootObject: self?.Formulaarray)
+                
+                let data = NSKeyedArchiver.archivedData(withRootObject: self?.Formulaarray)
                 userDefaults.set(data, forKey: nameofformulaes)}
             if (self?.resultarray.isEmpty) != true{
-            let data1 = NSKeyedArchiver.archivedData(withRootObject: self?.resultarray)
-            userDefaults.set(data1, forKey: nameofhistories)
+                let data1 = NSKeyedArchiver.archivedData(withRootObject: self?.resultarray)
+                userDefaults.set(data1, forKey: nameofhistories)
             }
-       userDefaults.synchronize()
-
-
+            userDefaults.synchronize()
+            
+            
             self?.performSegue(withIdentifier: "no", sender: self)
-                    }
-
-        
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -387,7 +438,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.setNeedsLayout()
         cell.awakeFromNib()
         return cell
-     }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.resultarray.count
         //edit to be companies
@@ -407,19 +458,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return Formulaarray[row].name
     }
     func openDatabase() -> OpaquePointer? {
-      var db: OpaquePointer?
-      if sqlite3_open(dbpath, &db) == SQLITE_OK {
-        print("Successfully opened connection to database at \(dbpath)")
-        return db
-      } else {
-        print("Unable to open database.")
-        fatalError()
-      }
+        var db: OpaquePointer?
+        if sqlite3_open(dbpath, &db) == SQLITE_OK {
+            print("Successfully opened connection to database at \(dbpath)")
+            return db
+        } else {
+            print("Unable to open database.")
+            fatalError()
+        }
     }
-    //create, retrieve from db
-    func retrieve(){
-        
-    }
+    
     func replaceAliases(_ equation:String)->String{
         var tempcharacter = ""
         var final = ""
@@ -508,7 +556,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return thin
         
     }
-
+    
     func replaceSymbs(_ symbstring:String)->String{
         var final = ""
         let array = Array(symbstring)
@@ -545,7 +593,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
         }
     }
-    }
+}
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         
@@ -557,7 +605,7 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-  
     
-
+    
+    
 }

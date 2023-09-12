@@ -30,6 +30,7 @@ CREATE TABLE "history" (
     "equation"    TEXT,
     "date"    TEXT,
     PRIMARY KEY("id" AUTOINCREMENT)
+    FOREIGN KEY (myformula_id) REFERENCES myformula(id)
 )
 """
 func matomta(_ equation:String)->String{//what does this even mean

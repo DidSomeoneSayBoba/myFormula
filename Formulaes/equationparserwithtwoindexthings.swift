@@ -15,10 +15,11 @@ class Formulae: NSObject, NSCoding{
     var name:String = ""
     var output = ""
     var outputlist:[String] = []
+    var id = -1
     func run2(_ inputs:[Double])->String{
-        var pi = 3.14159265358979323
-          let digits = CharacterSet.decimalDigits
-        var opers:[String] = ["+","-","/","*"]
+        let pi = 3.14159265358979323
+        let digits = CharacterSet.decimalDigits
+        let opers:[String] = ["+","-","/","*"]
         var ischar = false
         
         var operators:[String] = []

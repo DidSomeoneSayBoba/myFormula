@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SQLite3
 import QuartzCore
 class FormulasViewController:  UIViewController, UITableViewDataSource, UITableViewDelegate {
     var gottem1:Formulae!
@@ -67,7 +68,34 @@ var Formulaarray:[Formulae] = []
         self.formulalist.reloadData()
         }
     }
-
+    func insertformula(_ targetformula:Formulae, _ table: String){
+        let insertStatementString = "INSERT INTO history (name, formula, input,output) VALUES (?, ?, ?, ?);"
+        var insertStatement: OpaquePointer?
+        // 1
+        if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) ==
+            SQLITE_OK {
+            let name: NSString = targetformula.name as NSString
+            let formula: NSString = targetformula.formula as NSString
+            let inputs: NSString = targetformula.inputs.joined(separator:",") as NSString
+            let outputs: NSString = targetformula.output as NSString
+            //sqlite3_bind_int(insertStatement, 1, id)
+            // 3
+            sqlite3_bind_text(insertStatement,1,  name.utf8String, -1, nil)
+            sqlite3_bind_text(insertStatement, 2, formula.utf8String, -1, nil)
+            sqlite3_bind_text(insertStatement, 3, inputs.utf8String, -1, nil)
+            sqlite3_bind_text(insertStatement, 4, outputs.utf8String, -1, nil)
+            // 4
+            if sqlite3_step(insertStatement) == SQLITE_DONE {
+                print("\nSuccessfully inserted row.")
+            } else {
+                print("\nCould not insert row.")
+            }
+        } else {
+            print("\nINSERT statement is not prepared.")
+        }
+        // 5
+        sqlite3_finalize(insertStatement)
+    }
     @IBAction func addFormula(_ sender: Any) {
         var formulastring = converttomyformat(self.formula.text!)
         var userDefaults = UserDefaults.standard
