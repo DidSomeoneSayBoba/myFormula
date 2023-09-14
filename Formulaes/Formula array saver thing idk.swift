@@ -82,7 +82,7 @@ func dbToFormula(name:String,formula:String,input:String,output:String){
 }
 // i don't know what this is
 //probably a display format for formulas instead of the thing with placeholders
-//tbh we should change it to just store indices but we'll deal with it until we get the db stuff down
+//tbh we should change formulae to just store indices but we'll deal with it until we get the db stuff down
 func StringtopseudoFormula(Formula:String,formulaname:String) ->pseudoFormula{
     //want to put string into formula form, with ,s between formula and inputs
     var charsinformula = Formula

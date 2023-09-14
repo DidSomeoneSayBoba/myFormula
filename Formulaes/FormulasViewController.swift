@@ -63,7 +63,7 @@ class FormulasViewController:  UIViewController, UITableViewDataSource, UITableV
         
         if gottem != ""{
             Formulaarray.append(gottem1)
-            
+            DatabaseManager.shared.insertFormula(name: gottem1.name, formula: gottem1.formula, input: gottem1.inputs.joined(separator: ","), output: gottem1.outputlist.joined(separator: ","))
             if (self.Formulaarray.isEmpty) != true {
                 
                 userDefaults.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
@@ -99,7 +99,7 @@ class FormulasViewController:  UIViewController, UITableViewDataSource, UITableV
             
             self.formula.text = ""
             self.formulaName.text = ""
-            DatabaseManager.shared.insertFormula(name: formula1.name, formula: formula1.formula, input: formula1.inputs, output: formula1.output)
+            DatabaseManager.shared.insertFormula(name: formula1.name, formula: formula1.formula, input: formula1.inputs.joined(separator: ","), output: formula1.outputlist.joined(separator: ","))
             if (self.Formulaarray.isEmpty) != true {
                 
                 userDefaults.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
