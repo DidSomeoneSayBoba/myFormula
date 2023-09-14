@@ -8,6 +8,7 @@
 
 import Foundation
 //String into usable formula
+//update 09/13/23: want to save to db?
 func StringtoFormula(Formula:String,formulaname:String) ->Formulae{
     //want to put string into formula form, with ,s between formula and inputs
     var charsinformula = Formula
@@ -75,6 +76,13 @@ func StringtoFormula(Formula:String,formulaname:String) ->Formulae{
     formula.outputlist = outputs1
     return formula
 }
+//convert from row to shit
+func dbToFormula(name:String,formula:String,input:String,output:String){
+    
+}
+// i don't know what this is
+//probably a display format for formulas instead of the thing with placeholders
+//tbh we should change it to just store indices but we'll deal with it until we get the db stuff down
 func StringtopseudoFormula(Formula:String,formulaname:String) ->pseudoFormula{
     //want to put string into formula form, with ,s between formula and inputs
     var charsinformula = Formula

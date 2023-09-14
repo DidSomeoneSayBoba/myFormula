@@ -7,7 +7,11 @@
 //
 
 import Foundation
-//Formula Struct
+//Formula Class
+//a format to allow calculations after loading from save
+//inputs format
+// output format
+// outputlist format
 class Formulae: NSObject, NSCoding{
     var inputs:[String] = []
     var formula:String = ""

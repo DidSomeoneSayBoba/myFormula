@@ -15,8 +15,8 @@
             timestampString = "564093400.3757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "StringtoFormula(Formula:formulaname:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -32,8 +32,8 @@
             timestampString = "564093400.375775"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -49,8 +49,8 @@
             timestampString = "564093400.375844"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "run2(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -134,8 +134,8 @@
             timestampString = "564093400.375962"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
             landmarkName = "Formulae"
             landmarkType = "3">
          </BreakpointContent>
@@ -151,8 +151,8 @@
             timestampString = "564093400.3760591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -168,10 +168,10 @@
             timestampString = "564093400.376124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "calculate(_:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -185,26 +185,9 @@
             timestampString = "564093400.376175"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "calculate(_:)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5827EF4F-3B47-4059-A77E-C1308BE925CA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Formulaes/ViewController.swift"
-            timestampString = "564093400.376223"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -236,10 +219,10 @@
             timestampString = "564093400.376291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "351"
-            endingLineNumber = "351"
+            startingLineNumber = "352"
+            endingLineNumber = "352"
             landmarkName = "stringwithoutcommas(_:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

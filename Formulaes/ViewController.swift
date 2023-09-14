@@ -18,7 +18,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var dateindex = 0
     var formulanames:[String] = []
     var resultarray:[history] = []
-    var db:Connection!
+    let db=DatabaseManager.shared.connection
+    let myformulatable = DatabaseManager.shared.myformula
+    let historytable = DatabaseManager.shared.history
+
+    // Define columns for myformula table
+    let id = DatabaseManager.shared.id
+    let name = DatabaseManager.shared.name
+    let formula = DatabaseManager.shared.formula
+    let input = DatabaseManager.shared.input
+    let output = DatabaseManager.shared.output
+
+    // Define columns for history table
+    let historyId = DatabaseManager.shared.historyId
+    let myformula_id = DatabaseManager.shared.myformula_id
+    let equation = DatabaseManager.shared.equation
+    let date = DatabaseManager.shared.date
+
     @IBOutlet weak var calchistorytableview: UITableView!
     @IBOutlet weak var calculatehere: UITextField!
     @IBOutlet weak var calcorformula: UISegmentedControl!
@@ -53,6 +69,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @objc func keyboardWillHide(notification:NSNotification) {
         adjustingHeight(show: false, notification: notification)
     }
+    func tableExists(tableName: String, connection: Connection) -> Bool {
+        do {
+            let query = "SELECT count(*) as count FROM sqlite_master WHERE type='table' AND name=?"
+            let stmt = try connection.prepare(query)
+            for row in stmt.bind(tableName) {
+                if let count = row[0] as? Int64, count > 0 {
+                    return true
+                }
+            }
+        } catch {
+            print("Checking for table existence failed: \(error)")
+        }
+        return false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         let lolall = specVar(StringtopseudoFormula(Formula:matomta("abc=f"),formulaname:"test3"),3)
@@ -77,133 +107,104 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         //execute db stuff here
-        do {
-            db = try Connection("path_to_your.db")
-            db = openDatabase()
-        // 1
-        var createTableStatement: OpaquePointer?
-        // 2
-        if sqlite3_prepare_v2(db, createTableString, -1, &createTableStatement, nil) ==
-            SQLITE_OK {
-            // 3
-            if sqlite3_step(createTableStatement) == SQLITE_DONE {
-                print("\nContact table created.")
-            } else {
-                print("\nContact table is not created.")
+        //create db if dne, add one example entry?
+        //if exist, load, put formulas into Formulae class and load into formulaarray
+        //load all hist
+        
+            
+            if let data = userDefaults.object(forKey: nameofformulaes) {
+                Formulaarray = NSKeyedUnarchiver.unarchiveObject(with: data as! Data) as! [Formulae]
+                print("FOrmulas: \(Formulaarray)")
+            }else{
+                print("There is an issue")
             }
-        } else {
-            print("\nCREATE TABLE statement is not prepared.")
+            print("saved object: \(userDefaults.object(forKey: nameofhistories))")
+            if let data = userDefaults.object(forKey: nameofhistories) {
+                resultarray = NSKeyedUnarchiver.unarchiveObject(with: data as! Data) as! [history]
+                print("history: \(resultarray[0].date)")
+            }else{
+                print("There is an issue")
+            }
+            
+            print("formulaarray is \(Formulaarray)")
+            print("historyarray is \(resultarray)")
+            // Do any additional setup after loading the view, typically from a nib.
+            /*
+             var testformula = StringtoFormula(Formula:testmultipleinputs,formulaname:"woah")
+             print(Formulaarray)
+             var testintarray = [40,1,2,3]
+             var thing = testformula.run2(testintarray)
+             var test = StringtoFormula(Formula:parntest,formulaname:"memes")
+             var test2 = StringtoFormula(Formula:parntest1,formulaname:"LOL")
+             
+             print(test.run2(testintarray))
+             postfixcalc(test2.run2(testintarray))
+             var thin = postfixEvaluate(equation1: test2.run2(testintarray))
+             
+             */
+            
+            OperationQueue.main.addOperation({
+                self.calchistorytableview.delegate = self
+                self.calchistorytableview.dataSource = self
+                self.calchistorytableview.reloadData()
+            })
+            
+            let data = NSKeyedArchiver.archivedData(withRootObject: self.Formulaarray)
+            userDefaults.set(data, forKey: nameofformulaes)
+            print("set data for key \(nameofformulaes)")
+            namePicker.delegate = self
+            namePicker.dataSource = self
+            
+            userDefaults.synchronize()
+            
+            self.formulanames = []
+            for thing in Formulaarray {
+                formulanames.append(replaceAliases(thing.name))
+            }
         }
-        // 4
-        sqlite3_finalize(createTableStatement)
-        
-        if let data = userDefaults.object(forKey: nameofformulaes) {
-            Formulaarray = NSKeyedUnarchiver.unarchiveObject(with: data as! Data) as! [Formulae]
-            print("FOrmulas: \(Formulaarray)")
-        }else{
-            print("There is an issue")
+        func stringNormally(_ signString: String){
+            let string = Array(signString)
+            let signs = ["?","$","@"]
         }
-        print("saved object: \(userDefaults.object(forKey: nameofhistories))")
-        if let data = userDefaults.object(forKey: nameofhistories) {
-            resultarray = NSKeyedUnarchiver.unarchiveObject(with: data as! Data) as! [history]
-            print("history: \(resultarray[0].date)")
-        }else{
-            print("There is an issue")
-        }
-        
-        print("formulaarray is \(Formulaarray)")
-        print("historyarray is \(resultarray)")
-        // Do any additional setup after loading the view, typically from a nib.
-        /*
-         var testformula = StringtoFormula(Formula:testmultipleinputs,formulaname:"woah")
-         print(Formulaarray)
-         var testintarray = [40,1,2,3]
-         var thing = testformula.run2(testintarray)
-         var test = StringtoFormula(Formula:parntest,formulaname:"memes")
-         var test2 = StringtoFormula(Formula:parntest1,formulaname:"LOL")
-         
-         print(test.run2(testintarray))
-         postfixcalc(test2.run2(testintarray))
-         var thin = postfixEvaluate(equation1: test2.run2(testintarray))
-         
-         */
-        
-        OperationQueue.main.addOperation({
-            self.calchistorytableview.delegate = self
-            self.calchistorytableview.dataSource = self
-            self.calchistorytableview.reloadData()
-        })
-        
-        let data = NSKeyedArchiver.archivedData(withRootObject: self.Formulaarray)
-        userDefaults.set(data, forKey: nameofformulaes)
-        print("set data for key \(nameofformulaes)")
-        namePicker.delegate = self
-        namePicker.dataSource = self
-        
-        userDefaults.synchronize()
-        
-        self.formulanames = []
-        for thing in Formulaarray {
-            formulanames.append(replaceAliases(thing.name))
-        }
-    }
-    func stringNormally(_ signString: String){
-        let string = Array(signString)
-        let signs = ["?","$","@"]
-    }
-    func retrieve(_ table: String){
-        let query = "SELECT * FROM "+table+";"
-        var queryStatement: OpaquePointer?
-        if sqlite3_prepare_v2(
-            db,
-            query,
-            -1,
-            &queryStatement,
-            nil
-        ) == SQLITE_OK {
-            print("\n")
-            while (sqlite3_step(queryStatement) == SQLITE_ROW) {
-                let id = sqlite3_column_int(queryStatement, 0)
-                guard let queryResultCol1 = sqlite3_column_text(queryStatement, 1) else {
-                    print("Query result is nil.")
-                    return
+        func retrievehist(){
+            do {
+                // Fetch all rows from history table
+                let histories = try db!.prepare(historytable)
+                for historyRow in histories {
+                    print("ID: \(historyRow[historyId]), MyFormula ID: \(historyRow[myformula_id]), Equation: \(historyRow[equation]), Date: \(historyRow[date])")
                 }
-                let name = String(cString: queryResultCol1)
-                print("Query Result:")
-                print("\(id) | \(name)")
+            } catch {
+                print("Retrieval error: \(error)")
             }
-        } else {
-            let errorMessage = String(cString: sqlite3_errmsg(db))
-            print("\nQuery is not prepared \(errorMessage)")
         }
-        sqlite3_finalize(queryStatement)
-    }
-    // insert row into table
-    func inserthist(_ hist: history, _ table: String){
-        let insertStatementString = "INSERT INTO history (id, myformula_id, equation,date) VALUES (?, ?, ?, ?);"
-        var insertStatement: OpaquePointer?
-        // 1
-        if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) ==
-            SQLITE_OK {
-            let eq: NSString = hist.equation as NSString
-            let date: NSString = hist.date as NSString
-            // 2
-            //sqlite3_bind_int(insertStatement, 1, id)
-            // 3
-            sqlite3_bind_text(insertStatement, 3, eq.utf8String, -1, nil)
-            sqlite3_bind_text(insertStatement, 4, date.utf8String, -1, nil)
-            // 4
-            if sqlite3_step(insertStatement) == SQLITE_DONE {
-                print("\nSuccessfully inserted row.")
+        // insert row into table
+        func inserthist(_ hist: history, _ table: String){
+            let insertStatementString = "INSERT INTO history (id, myformula_id, equation,date) VALUES (?, ?, ?, ?);"
+            var insertStatement: OpaquePointer?
+            // 1
+            if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) ==
+                SQLITE_OK {
+                let eq: NSString = hist.equation as NSString
+                let date: NSString = hist.date as NSString
+                // 2
+                //sqlite3_bind_int(insertStatement, 1, id)
+                // 3
+                sqlite3_bind_text(insertStatement, 3, eq.utf8String, -1, nil)
+                sqlite3_bind_text(insertStatement, 4, date.utf8String, -1, nil)
+                // 4
+                if sqlite3_step(insertStatement) == SQLITE_DONE {
+                    print("\nSuccessfully inserted row.")
+                } else {
+                    print("\nCould not insert row.")
+                }
             } else {
-                print("\nCould not insert row.")
+                print("\nINSERT statement is not prepared.")
             }
-        } else {
-            print("\nINSERT statement is not prepared.")
+            // 5
+            sqlite3_finalize(insertStatement)
         }
-        // 5
-        sqlite3_finalize(insertStatement)
-    }
+        
+    
     
     //abc=f
     @IBAction func calculate(_ sender: Any) {
