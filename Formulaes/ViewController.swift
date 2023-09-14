@@ -172,6 +172,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let histories = try db!.prepare(historytable)
                 for historyRow in histories {
                     print("ID: \(historyRow[historyId]), MyFormula ID: \(historyRow[myformula_id]), Equation: \(historyRow[equation]), Date: \(historyRow[date])")
+                    // Construct individual history from record
                 }
             } catch {
                 print("Retrieval error: \(error)")
@@ -179,29 +180,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         // insert row into table
         func inserthist(_ hist: history, _ table: String){
-            let insertStatementString = "INSERT INTO history (id, myformula_id, equation,date) VALUES (?, ?, ?, ?);"
-            var insertStatement: OpaquePointer?
-            // 1
-            if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) ==
-                SQLITE_OK {
-                let eq: NSString = hist.equation as NSString
-                let date: NSString = hist.date as NSString
-                // 2
-                //sqlite3_bind_int(insertStatement, 1, id)
-                // 3
-                sqlite3_bind_text(insertStatement, 3, eq.utf8String, -1, nil)
-                sqlite3_bind_text(insertStatement, 4, date.utf8String, -1, nil)
-                // 4
-                if sqlite3_step(insertStatement) == SQLITE_DONE {
-                    print("\nSuccessfully inserted row.")
-                } else {
-                    print("\nCould not insert row.")
-                }
-            } else {
-                print("\nINSERT statement is not prepared.")
-            }
-            // 5
-            sqlite3_finalize(insertStatement)
+            //put in formula id
+            //DatabaseManager.shared.insertHistory(myformulaId: , equation: "1x^2 + 2x + 3", date: "2023-09-14")
         }
         
     

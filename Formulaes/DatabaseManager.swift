@@ -61,5 +61,14 @@ class DatabaseManager {
             print("Insertion failed: \(error)")
         }
     }
+    func insertHistory(myformulaId: Int64, equation: String, date: String) {
+        do {
+            let insert = history.insert(self.myformula_id <- myformulaId, self.equation <- equation, self.date <- date)
+            try connection?.run(insert)
+            print("History insertion successful")
+        } catch {
+            print("History insertion failed: \(error)")
+        }
+    }
 
 }

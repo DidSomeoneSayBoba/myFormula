@@ -12,7 +12,6 @@ import QuartzCore
 class FormulasViewController:  UIViewController, UITableViewDataSource, UITableViewDelegate {
     var gottem1:Formulae!
     var gottem = ""
-    var db: Connection
     let myformula = Table("myformula")
     let history = Table("history")
     
