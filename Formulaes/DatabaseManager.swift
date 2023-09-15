@@ -3,7 +3,7 @@
 //  Formulaes
 //
 //  Created by Aurelia Miyajima on 9/13/23.
-//  Copyright © 2023 Michael Miyajima. All rights reserved.
+//  Copyright © 2023 Aurelia Miyajima. All rights reserved.
 //
 
 import Foundation
@@ -26,9 +26,22 @@ class DatabaseManager {
     let equation = Expression<String>("equation")
     let date = Expression<String>("date")
     private init() {
-        let path = "./myformula.db"
+        let path = "myformula.db"
+        let paths = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)
+        let libraryDirectory = paths[0]
+        let destinationPath = "\(libraryDirectory)/myformula.db"
+
+        if !FileManager.default.fileExists(atPath: destinationPath) {
+            if let bundlePath = Bundle.main.path(forResource: "myformula", ofType: ".db") {
+                do {
+                    try FileManager.default.copyItem(atPath: bundlePath, toPath: destinationPath)
+                } catch {
+                    print("Failed to copy .db file from bundle to Library directory: \(error)")
+                }
+            }
+        }
         do {
-            connection = try Connection(path)
+            connection = try Connection(destinationPath)
             try connection!.run(myformula.create(ifNotExists: true) { t in
                 t.column(id, primaryKey: .autoincrement)
                 t.column(name)
@@ -43,7 +56,7 @@ class DatabaseManager {
                 t.column(myformula_id)
                 t.column(equation)
                 t.column(date)
-                t.foreignKey(myformula_id, references: myformula, id)
+                //t.foreignKey(myformula_id, references: myformula, id)
             })
             let count = try(connection!.scalar(myformula.count))
             if (count == 0){

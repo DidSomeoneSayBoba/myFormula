@@ -45,6 +45,8 @@ class FormulasViewController:  UIViewController, UITableViewDataSource, UITableV
             gottem1 = StringtoFormula(Formula: gottem, formulaname: "scan ")}
         // NotificationCenter.default.addObserver(self, selector: #selector(FormulasViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         //retrieve formulas?
+        retrieveFormulas()
+        /*
         print("saved object: \(userDefaults.object(forKey: nameofformulaes))")
         if let data = userDefaults.object(forKey: nameofformulaes) {
             Formulaarray = NSKeyedUnarchiver.unarchiveObject(with: data as! Data) as! [Formulae]
@@ -53,13 +55,14 @@ class FormulasViewController:  UIViewController, UITableViewDataSource, UITableV
             print("There is an issue")
         }
         //i feel like this isnt necessary
+        
         if let data = userDefaults.object(forKey: nameofhistories) {
             
             resultarray = NSKeyedUnarchiver.unarchiveObject(with: data as! Data) as! [history]
             print("myPeopleList: \(Formulaarray[0].formula)")
         }else{
             print("There is an issue")
-        }
+        }*/
         // Do any additional setup after loading the view.
         self.formulalist.delegate = self
         self.formulalist.dataSource = self

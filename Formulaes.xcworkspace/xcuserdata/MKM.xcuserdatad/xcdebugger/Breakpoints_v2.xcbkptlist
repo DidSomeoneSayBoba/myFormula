@@ -103,5 +103,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1F361B90-1C65-43CD-8A13-EE98A3B56CB1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Formulaes/DatabaseManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "init()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1F361B90-1C65-43CD-8A13-EE98A3B56CB1 - e7ee1f80c2dced9d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SQLite.TableBuilder) -&gt; () in Formulaes.DatabaseManager.() -&gt; Formulaes.DatabaseManager.init() -&gt; Formulaes.DatabaseManager"
+                  moduleName = "Formulaes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MKM/Documents/myFormula/Formulaes/DatabaseManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "1F361B90-1C65-43CD-8A13-EE98A3B56CB1 - bcbe42a6a0b171bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Formulaes.DatabaseManager.() -&gt; Formulaes.DatabaseManager.init() -&gt; Formulaes.DatabaseManager"
+                  moduleName = "Formulaes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MKM/Documents/myFormula/Formulaes/DatabaseManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "3106">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

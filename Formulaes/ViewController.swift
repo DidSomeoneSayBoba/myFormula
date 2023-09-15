@@ -18,22 +18,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var dateindex = 0
     var formulanames:[String] = []
     var resultarray:[history] = []
-    let db=DatabaseManager.shared.connection
-    let myformulatable = DatabaseManager.shared.myformula
-    let historytable = DatabaseManager.shared.history
+    var db: Connection?
+    var myformulatable: Table?
+    var historytable: Table?
 
     // Define columns for myformula table
-    let id = DatabaseManager.shared.id
-    let name = DatabaseManager.shared.name
-    let formula = DatabaseManager.shared.formula
-    let input = DatabaseManager.shared.input
-    let output = DatabaseManager.shared.output
+    var id: Expression<Int64>?
+    var name: Expression<String>?
+    var formula: Expression<String?>?
+    var input: Expression<String?>?
+    var output: Expression<String?>?
 
     // Define columns for history table
-    let historyId = DatabaseManager.shared.historyId
-    let myformula_id = DatabaseManager.shared.myformula_id
-    let equation = DatabaseManager.shared.equation
-    let date = DatabaseManager.shared.date
+    var historyId: Expression<Int64>?
+    var myformula_id: Expression<Int64>?
+    var equation: Expression<String>?
+    var date: Expression<String>?
 
     @IBOutlet weak var calchistorytableview: UITableView!
     @IBOutlet weak var calculatehere: UITextField!
@@ -47,6 +47,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var parntest = "9+(x+a+s)*b"
     var parntest1 = "(x+a)-b"
     var testmultipleinputs = "t+a+b=c"
+    func setupDatabaseReferences() {
+        db = DatabaseManager.shared.connection
+        myformulatable = DatabaseManager.shared.myformula
+        historytable = DatabaseManager.shared.history
+
+        // Define columns for myformula table
+        id = DatabaseManager.shared.id
+        name = DatabaseManager.shared.name
+        formula = DatabaseManager.shared.formula
+        input = DatabaseManager.shared.input
+        output = DatabaseManager.shared.output
+
+        // Define columns for history table
+        historyId = DatabaseManager.shared.historyId
+        myformula_id = DatabaseManager.shared.myformula_id
+        equation = DatabaseManager.shared.equation
+        date = DatabaseManager.shared.date
+    }
+
+    // Call the method to initialize
+    
+
     func adjustingHeight(show:Bool, notification:NSNotification) {
         // 1
         
@@ -86,15 +108,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func retrieveFormulas(){
         do {
             // Fetch all rows from history table
-            let formulas = try db!.prepare(myformulatable)
+            let formulas = try db!.prepare(myformulatable!)
             for row in formulas {
                 //input is joined inputs, output is outputlist joined
-                let inp = Array(row[input]!.split(separator: ","))
+                let inp = Array(row[input!]!.split(separator: ","))
                 
-                var formula = Formulae(inputs: inp.map { String($0) }, formula: row[self.formula]!, name:row[name])
-                formula.output = row[output]!
-                formula.outputlist = Array(row[output]!.split(separator: ",")).map { String($0) }
-                formula.id = Int(row[id])
+                var formula = Formulae(inputs: inp.map { String($0) }, formula: row[self.formula!]!, name:row[name!])
+                formula.output = row[output!]!
+                formula.outputlist = Array(row[output!]!.split(separator: ",")).map { String($0) }
+                formula.id = Int(row[id!])
                 Formulaarray.append(formula)
                                        
             }
@@ -106,18 +128,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func retrievehist(){
         do {
             // Fetch all rows from history table
-            let histories = try db!.prepare(historytable)
+            let histories = try db!.prepare(historytable!)
             for historyRow in histories {
-                print("ID: \(historyRow[historyId]), MyFormula ID: \(historyRow[myformula_id]), Equation: \(historyRow[equation]), Date: \(historyRow[date])")
+                print("ID: \(historyRow[historyId!]), MyFormula ID: \(historyRow[myformula_id!]), Equation: \(historyRow[equation!]), Date: \(historyRow[date!])")
                 // Construct individual history from record
                 var fname = ""
                 for formula in Formulaarray{
-                    if (formula.id == historyRow[myformula_id]){
+                    if (formula.id == historyRow[myformula_id!]){
                         fname = formula.name
                         break
                     }
                 }
-                let hist = history(Formulaname:fname, equation:historyRow[equation], date:historyRow[date])
+                let hist = history(Formulaname:fname, equation:historyRow[equation!], date:historyRow[date!])
                 resultarray.append(hist)
                 
             }
@@ -127,6 +149,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let lolall = specVar(StringtopseudoFormula(Formula:matomta("abc=f"),formulaname:"test3"),3)
         let lolall1 = specVar(StringtopseudoFormula(Formula:matomta("abc=f"),formulaname:"test4"),2)
         print("lol hi "+lolall);
@@ -152,10 +175,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //create db if dne, add one example entry?
         //if exist, load, put formulas into Formulae class and load into formulaarray
         //load all hist
-        
+        setupDatabaseReferences()
         retrieveFormulas()
         retrievehist()
-                
+               /*
             if let data = userDefaults.object(forKey: nameofformulaes) {
                 Formulaarray = NSKeyedUnarchiver.unarchiveObject(with: data as! Data) as! [Formulae]
                 print("FOrmulas: \(Formulaarray)")
@@ -168,7 +191,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 print("history: \(resultarray[0].date)")
             }else{
                 print("There is an issue")
-            }
+            }*/
             
             print("formulaarray is \(Formulaarray)")
             print("historyarray is \(resultarray)")
