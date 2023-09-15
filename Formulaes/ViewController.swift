@@ -83,6 +83,37 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         return false
     }
+    func retrieveFormulas(){
+        do {
+            // Fetch all rows from history table
+            let formulas = try db!.prepare(myformulatable)
+            for row in formulas {
+                //input is joined inputs, output is outputlist joined
+                let inp = Array(row[input]!.split(separator: ","))
+                
+                var formula = Formulae(inputs: inp.map { String($0) }, formula: row[self.formula]!, name:row[name])
+                formula.output = row[output]!
+                formula.outputlist = Array(row[output]!.split(separator: ",")).map { String($0) }
+                formula.id = Int(row[id])
+                Formulaarray.append(formula)
+                                       
+            }
+        } catch {
+            print("Retrieval error: \(error)")
+        }
+    }
+    func retrievehist(){
+        do {
+            // Fetch all rows from history table
+            let histories = try db!.prepare(historytable)
+            for historyRow in histories {
+                print("ID: \(historyRow[historyId]), MyFormula ID: \(historyRow[myformula_id]), Equation: \(historyRow[equation]), Date: \(historyRow[date])")
+                // Construct individual history from record
+            }
+        } catch {
+            print("Retrieval error: \(error)")
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         let lolall = specVar(StringtopseudoFormula(Formula:matomta("abc=f"),formulaname:"test3"),3)
@@ -166,19 +197,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let string = Array(signString)
             let signs = ["?","$","@"]
         }
-        func retrievehist(){
-            do {
-                // Fetch all rows from history table
-                let histories = try db!.prepare(historytable)
-                for historyRow in histories {
-                    print("ID: \(historyRow[historyId]), MyFormula ID: \(historyRow[myformula_id]), Equation: \(historyRow[equation]), Date: \(historyRow[date])")
-                    // Construct individual history from record
-                }
-            } catch {
-                print("Retrieval error: \(error)")
-            }
-        }
-        // insert row into table
+        
+        // insert row into table, both db and local
         func inserthist(_ hist: history, _ table: String){
             //put in formula id
             //DatabaseManager.shared.insertHistory(myformulaId: , equation: "1x^2 + 2x + 3", date: "2023-09-14")
@@ -290,7 +310,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let whole = "\(date),\(hour):\(minutes)"
                 print("wow wow is \(wow)")
                 let result = "\(wow)"+String(Double(round(postfixEvaluate(equation1: postfixformula)*10000))/10000)
-                let formulaname = Formulaarray[namePicker.selectedRow(inComponent:0)].name
+                let formulaname = formula.name
+                let formulaid = formula.id
                 let historything = history(Formulaname:formulaname, equation:/*replaceAliases(convertEquation(result))*/result, date:whole)
                 //perform db update here
                 resultarray.append(historything)

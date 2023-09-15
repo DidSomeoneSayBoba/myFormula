@@ -12,7 +12,6 @@ class history: NSObject, NSCoding{
     var Formulaname:String
     var equation:String
     var date:String
-    var formulaID:Int
     init(Formulaname:String, equation:String, date:String){
         self.Formulaname = Formulaname
         self.equation = equation

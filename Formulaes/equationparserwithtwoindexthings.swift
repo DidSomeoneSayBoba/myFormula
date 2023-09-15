@@ -13,13 +13,12 @@ import Foundation
 // output format
 // outputlist format
 class Formulae: NSObject, NSCoding{
-    var inputs:[String] = []
-    var formula:String = ""
-    var outputs:[String] = []
-    var name:String = ""
-    var output = ""
-    var outputlist:[String] = []
-    var id = -1
+    var inputs:[String] = []//inputs, in an array
+    var formula:String = "" // the formula itself
+    var name:String = "" //name of formula
+    var output = "" // probably comma separated outputs
+    var outputlist:[String] = [] //outputs in an array
+    var id = -1 //id on myformula table
     func run2(_ inputs:[Double])->String{
         let pi = 3.14159265358979323
         let digits = CharacterSet.decimalDigits

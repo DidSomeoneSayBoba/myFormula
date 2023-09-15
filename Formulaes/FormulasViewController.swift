@@ -98,6 +98,7 @@ class FormulasViewController:  UIViewController, UITableViewDataSource, UITableV
             
             self.formula.text = ""
             self.formulaName.text = ""
+            
             DatabaseManager.shared.insertFormula(name: formula1.name, formula: formula1.formula, input: formula1.inputs.joined(separator: ","), output: formula1.outputlist.joined(separator: ","))
             if (self.Formulaarray.isEmpty) != true {
                 
