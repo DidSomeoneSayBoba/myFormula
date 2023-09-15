@@ -10,17 +10,21 @@ import UIKit
 import SQLite
 import QuartzCore
 class FormulasViewController:  UIViewController, UITableViewDataSource, UITableViewDelegate {
+    let db=DatabaseManager.shared.connection
+    let myformulatable = DatabaseManager.shared.myformula
+    let historytable = DatabaseManager.shared.history
+
+    // Define columns for myformula table
+    let id = DatabaseManager.shared.id
+    let name = DatabaseManager.shared.name
+    let expformula = DatabaseManager.shared.formula
+    let input = DatabaseManager.shared.input
+    let output = DatabaseManager.shared.output
     var gottem1:Formulae!
     var gottem = ""
     let myformula = Table("myformula")
     let history = Table("history")
-    
-    // Define columns for myformula table
-    let id = Expression<Int64>("id")
-    let name = Expression<String>("name")
-    let expformula = Expression<String?>("formula")
-    let input = Expression<String?>("input")
-    let output = Expression<String?>("output")
+
     @IBOutlet weak var bottomFormula: NSLayoutConstraint!
     @IBOutlet weak var variablelist: UITextField!
     @IBOutlet weak var formula: UITextField!
@@ -36,10 +40,11 @@ class FormulasViewController:  UIViewController, UITableViewDataSource, UITableV
         var userDefaults = UserDefaults.standard
         formulalist.layer.borderWidth=2.0
         //NotificationCenter.default.addObserver(self, selector: #selector(FormulasViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
         if gottem != ""{
             gottem1 = StringtoFormula(Formula: gottem, formulaname: "scan ")}
         // NotificationCenter.default.addObserver(self, selector: #selector(FormulasViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
+        //retrieve formulas?
         print("saved object: \(userDefaults.object(forKey: nameofformulaes))")
         if let data = userDefaults.object(forKey: nameofformulaes) {
             Formulaarray = NSKeyedUnarchiver.unarchiveObject(with: data as! Data) as! [Formulae]
@@ -47,7 +52,7 @@ class FormulasViewController:  UIViewController, UITableViewDataSource, UITableV
         }else{
             print("There is an issue")
         }
-        
+        //i feel like this isnt necessary
         if let data = userDefaults.object(forKey: nameofhistories) {
             
             resultarray = NSKeyedUnarchiver.unarchiveObject(with: data as! Data) as! [history]
@@ -76,7 +81,24 @@ class FormulasViewController:  UIViewController, UITableViewDataSource, UITableV
             self.formulalist.reloadData()
         }
     }
-    
+    func retrieveFormulas(){
+        do {
+            // Fetch all rows from myformula table
+            let formulas = try db!.prepare(myformulatable)
+            for row in formulas {
+                //input is joined inputs, output is outputlist joined
+                let inp = Array(row[input]!.split(separator: ","))
+                var formula = Formulae(inputs: inp.map { String($0) }, formula: row[self.expformula]!, name:row[name])
+                formula.output = row[output]!
+                formula.outputlist = Array(row[output]!.split(separator: ",")).map { String($0) }
+                formula.id = Int(row[id])
+                Formulaarray.append(formula)
+                                       
+            }
+        } catch {
+            print("Retrieval error: \(error)")
+        }
+    }
     //called when adding a new formula
     //reformats entry into formulaeable format
     @IBAction func addFormula(_ sender: Any) {

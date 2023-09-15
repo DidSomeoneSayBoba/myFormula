@@ -13,7 +13,6 @@ class DatabaseManager {
     var connection: Connection?
     let myformula = Table("myformula")
     let history = Table("history")
-
     // Define columns for myformula table
     let id = Expression<Int64>("id")
     let name = Expression<String>("name")
@@ -21,7 +20,7 @@ class DatabaseManager {
     let input = Expression<String?>("input")
     let output = Expression<String?>("output")
 
-    // Define columns for history table
+    // Define columns for history tablea
     let historyId = Expression<Int64>("id")
     let myformula_id = Expression<Int64>("myformula_id")
     let equation = Expression<String>("equation")
@@ -46,7 +45,12 @@ class DatabaseManager {
                 t.column(date)
                 t.foreignKey(myformula_id, references: myformula, id)
             })
-            
+            let count = try(connection!.scalar(myformula.count))
+            if (count == 0){
+                let exf = StringtoFormula(Formula:"a+b=c",formulaname:"ex.formula ")
+                
+                insertFormula(name: exf.name, formula: exf.formula, input: exf.inputs.joined(separator: ","), output: exf.outputlist.joined(separator: ","))
+            }
         } catch {
             connection = nil
             print("Unable to open database: \(error)")

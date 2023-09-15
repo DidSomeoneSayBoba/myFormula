@@ -152,6 +152,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //create db if dne, add one example entry?
         //if exist, load, put formulas into Formulae class and load into formulaarray
         //load all hist
+        
         retrieveFormulas()
         retrievehist()
                 
