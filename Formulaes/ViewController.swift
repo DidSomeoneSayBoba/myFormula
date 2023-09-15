@@ -102,6 +102,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             print("Retrieval error: \(error)")
         }
     }
+    //TODO!!!
     func retrievehist(){
         do {
             // Fetch all rows from history table
@@ -109,6 +110,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             for historyRow in histories {
                 print("ID: \(historyRow[historyId]), MyFormula ID: \(historyRow[myformula_id]), Equation: \(historyRow[equation]), Date: \(historyRow[date])")
                 // Construct individual history from record
+                var fname = ""
+                for formula in Formulaarray{
+                    if (formula.id == historyRow[myformula_id]){
+                        fname = formula.name
+                        break
+                    }
+                }
+                let hist = history(Formulaname:fname, equation:historyRow[equation], date:historyRow[date])
+                resultarray.append(hist)
+                
             }
         } catch {
             print("Retrieval error: \(error)")
@@ -141,8 +152,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //create db if dne, add one example entry?
         //if exist, load, put formulas into Formulae class and load into formulaarray
         //load all hist
-        
-            
+        retrieveFormulas()
+        retrievehist()
+                
             if let data = userDefaults.object(forKey: nameofformulaes) {
                 Formulaarray = NSKeyedUnarchiver.unarchiveObject(with: data as! Data) as! [Formulae]
                 print("FOrmulas: \(Formulaarray)")
@@ -314,6 +326,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let formulaid = formula.id
                 let historything = history(Formulaname:formulaname, equation:/*replaceAliases(convertEquation(result))*/result, date:whole)
                 //perform db update here
+                DatabaseManager.shared.insertHistory(myformulaId: Int64(formulaid), equation: result, date: date)
                 resultarray.append(historything)
                 //works?
                 calchistorytableview.reloadData()
@@ -458,16 +471,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return Formulaarray[row].name
-    }
-    func openDatabase() -> OpaquePointer? {
-        var db: OpaquePointer?
-        if sqlite3_open(dbpath, &db) == SQLITE_OK {
-            print("Successfully opened connection to database at \(dbpath)")
-            return db
-        } else {
-            print("Unable to open database.")
-            fatalError()
-        }
     }
     
     func replaceAliases(_ equation:String)->String{
