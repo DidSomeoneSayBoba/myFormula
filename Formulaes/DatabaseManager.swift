@@ -59,7 +59,7 @@ class DatabaseManager {
                 //t.foreignKey(myformula_id, references: myformula, id)
             })
             let count = try(connection!.scalar(myformula.count))
-            if (count == 0){
+            if (count <= 0){
                 let exf = StringtoFormula(Formula:"a+b=c",formulaname:"ex.formula ")
                 
                 insertFormula(name: exf.name, formula: exf.formula, input: exf.inputs.joined(separator: ","), output: exf.outputlist.joined(separator: ","))
